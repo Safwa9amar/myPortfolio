@@ -1,5 +1,6 @@
 import { H1, Text } from "../all_in_one";
 import styled from "styled-components";
+import { useState } from "react";
 
 const Nav = styled.div`
   display: flex;
@@ -16,11 +17,12 @@ const Nav = styled.div`
         justify-content: space-evenly;
         flex-flow: column;
         align-items: baseline;
+        z-index: 111;
         height: 100vh;
         width: 40vw;
         background: grey;
         position: absolute;
-        right: 100%;
+        left: ${(props) => (props.active === true ? "0" : "-40vw")};
         transition: ease-out 300ms;
         & li {
           color: black;
@@ -101,28 +103,45 @@ const MenuBtn = styled.div`
     flex-flow: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 48px;
-    width: 48px;
+    height: 35px;
+    width: 35px;
     border: 1px solid whitesmoke;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     position: absolute;
     right: 5%;
     top: 5%;
     & span {
       width: 50%;
-      height: 5%;
+      height: 0.1rem;
       background: #eee;
+      pointer-events: none;
+      transition: transform ease-in 100ms;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.active span:nth-child(2) {
+      display: none;
+    }
+    &.active span:nth-child(1) {
+      transform: rotate(45deg);
+      transform-origin: center bottom;
+    }
+    &.active span:nth-child(3) {
+      position: absolute;
+      transform: rotate(-45deg);
+      transform-origin: center bottom;
     }
   }
 `;
 
 const Navbar = (props) => {
+  const [active, setActive] = useState(false);
   return (
-    <Nav className="Nav">
+    <Nav className="Nav" active={active}>
       <FlexRow className="nav_list">
-        <Logo className="logo">
-            H.Safwan
-        </Logo>
+        <Logo className="logo">H.Safwan</Logo>
         <ul>
           <li>About</li>
           <li>Services</li>
@@ -137,7 +156,12 @@ const Navbar = (props) => {
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, rem.
         </Text>
       </About>
-      <MenuBtn>
+      <MenuBtn
+        onClick={(e) => {
+          e.target.classList.toggle("active");
+          active === false ? setActive(true) : setActive(false);
+        }}
+      >
         <span></span>
         <span></span>
         <span></span>
