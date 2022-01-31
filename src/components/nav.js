@@ -89,9 +89,9 @@ const Contact = styled.div`
   border-radius: 0.1rem;
   @media screen and (max-width: 600px) {
     position: absolute;
-    bottom: 20%;
+    bottom: 15%;
     left: 50%;
-    transform: translate(-50%, -20%);
+    transform: translate(-50%, -15%);
   }
 `;
 const MenuBtn = styled.div`
