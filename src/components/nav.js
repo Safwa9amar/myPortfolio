@@ -59,8 +59,8 @@ const About = styled.div`
   transform: translate(-50%, -50%);
   text-align: center;
   @media screen and (max-width: 600px) {
-    top: 30%;
-    transform: translate(-50%, -30%);
+    top: 35%;
+    transform: translate(-50%, -35%);
     h1 {
       font-size: 3.5rem;
     }
