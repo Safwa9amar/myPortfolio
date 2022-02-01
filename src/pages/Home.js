@@ -19,6 +19,8 @@ const HomeWrapper = styled.div`
   }
   @media screen and (max-width: 600px) {
     flex-flow: column;
+    align-items: center;
+
     .profile_img {
       & img {
         width: 80vw;
@@ -26,7 +28,7 @@ const HomeWrapper = styled.div`
     }
     .description {
       width: 80vw;
-      & h5 , p , h2{
+      & h5  , h2{
           text-align: center;
       }
     }
