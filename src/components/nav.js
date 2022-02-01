@@ -1,7 +1,6 @@
 import { H1, Text } from "../all_in_one";
 import styled from "styled-components";
 import { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const Nav = styled.div`
