@@ -1,6 +1,8 @@
 import { H1, Text } from "../all_in_one";
 import styled from "styled-components";
 import { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Nav = styled.div`
   display: flex;
@@ -14,19 +16,20 @@ const Nav = styled.div`
   @media screen and (max-width: 600px) {
     &.Nav {
       & ul {
-        justify-content: space-evenly;
         flex-flow: column;
-        align-items: baseline;
+        justify-content: center;
+        align-items: center;
         z-index: 111;
         height: 100vh;
-        width: 40vw;
-        background: grey;
+        width: 50vw;
+        background: #464764;
         position: absolute;
-        left: ${(props) => (props.active === true ? "0" : "-40vw")};
+        left: ${(props) => (props.active === true ? "0" : "-50vw")};
         transition: ease-out 300ms;
         & li {
           color: black;
           font-weight: 500;
+          border-bottom: solid 1px #3c3735;
         }
       }
     }
@@ -50,6 +53,10 @@ const FlexRow = styled.div`
   & li {
     list-style-type: none;
     margin: 1rem 2rem;
+    & a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 `;
 const About = styled.div`
@@ -138,21 +145,47 @@ const MenuBtn = styled.div`
 
 const Navbar = (props) => {
   const [active, setActive] = useState(false);
+  const Location = useLocation();
+  console.log(Location.pathname);
+
   return (
     <Nav className="Nav" active={active}>
       <FlexRow className="nav_list">
         <Logo className="logo">H.Safwan</Logo>
         <ul>
-          <li>About</li>
-          <li>Services</li>
-          <li>Projects</li>
-          <li>Blog</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/Services">Services</Link>
+          </li>
+          <li>
+            <Link to="/Projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/Blogs">Blogs</Link>
+          </li>
+          <li>
+            <Link to="/Contact">Contact</Link>
+          </li>
         </ul>
         <Contact className="contactBtn">Contact</Contact>
       </FlexRow>
       <About className="About">
-        <H1 color="white">About Me</H1>
-        <Text>
+        <H1 color="white">
+          {Location.pathname === "/"
+            ? "About Me"
+            : Location.pathname === "/Services"
+            ? "Services"
+            : Location.pathname === "/Projects"
+            ? "Projects"
+            : Location.pathname === "/Blogs"
+            ? "Blogs"
+            : Location.pathname === "/Contact"
+            ? "Contact"
+            : ""}
+        </H1>
+        <Text color="white">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, rem.
         </Text>
       </About>

@@ -2,17 +2,18 @@ import styled from "styled-components";
 
 const H1 = styled.h1`
   font-family: Epilogue;
-  font-weight:800;
+  font-weight: 800;
   font-size: 4.5rem;
   line-height: 80px;
   letter-spacing: -2px;
-  color: ${props => props.color === 'white' ? 'whitesmoke' : '#391400'};
+  color: ${(props) => (props.color === "white" ? "whitesmoke" : "#391400")};
 `;
 const H2 = styled.h2`
-font-family: Epilogue;
-font-size: 56px;
-line-height: 64px;
-letter-spacing: -1px;<
+  font-family: Epilogue;
+  font-size: 3, 5rem;
+  line-height: 64px;
+  letter-spacing: -1px;
+  color: ${(props) => (props.color === "white" ? "whitesmoke" : "#391400")};
 `;
 const H3 = styled.h3`
   font-family: Epilogue;
@@ -53,7 +54,8 @@ const Text = styled.p`
   font-weight: normal;
   font-size: 1rem;
   line-height: 32px;
-  color: whitesmoke;
+  color: ${(props) => (props.color === "white" ? "whitesmoke" : "#391400")};
+  text-align: ${(props) => (props.justify === true ? "justify" : "")}; ;
 `;
 const TextSmall = styled.p`
   font-family: Epilogue;
