@@ -75,7 +75,7 @@ const HomeWrapper = styled.div`
         & p {
         text-align: left;
         padding: 0.1rem;
-        border-bottom:1px solid #ef6c57;
+        border-bottom:1px solid #f3d1bf;
         margin-bottom: .3rem;
 
         }
@@ -140,7 +140,7 @@ const Home = () => {
               <strong>Experience: </strong>5 Years
             </p>
             <p>
-              <strong>Phone: </strong>+213 674 020 244
+              <strong>Email: </strong>Hassanih97@gmail.com
             </p>
             <p>
               <strong>Phone: </strong>+213 674 020 244
