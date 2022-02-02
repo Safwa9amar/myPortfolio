@@ -56,6 +56,39 @@ const FlexRow = styled.div`
     & a {
       text-decoration: none;
       color: inherit;
+      position: relative;
+      &.active {
+        box-shadow: 1px 20px 17px 0px #d12e2ea1;
+        background: inherit;
+        ::after {
+          content: "";
+          background: #ff460e;
+          width: 100%;
+          height: 1px;
+          left: 0;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        background: #ffffff;
+        transition: all 200ms;
+        position: absolute;
+        left: -100%;
+      }
+
+      &:hover {
+        box-shadow: 1px 20px 17px 0px #eeeeee30;
+        background: inherit;
+        ::after {
+          content: "";
+          width: 100%;
+          height: 1px;
+          left: 0;
+        }
+      }
     }
   }
 `;
@@ -146,27 +179,47 @@ const MenuBtn = styled.div`
 const Navbar = (props) => {
   const [active, setActive] = useState(false);
   const Location = useLocation();
-  console.log(Location.pathname);
-
   return (
     <Nav className="Nav" active={active}>
       <FlexRow className="nav_list">
         <Logo className="logo">H.Safwan</Logo>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className={Location.pathname === "/" ? "active" : ""} to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/Services">Services</Link>
+            <Link
+              className={Location.pathname === "/Services" ? "active" : ""}
+              to="/Services"
+            >
+              Services
+            </Link>
           </li>
           <li>
-            <Link to="/Projects">Projects</Link>
+            <Link
+              className={Location.pathname === "/Projects" ? "active" : ""}
+              to="/Projects"
+            >
+              Projects
+            </Link>
           </li>
           <li>
-            <Link to="/Blogs">Blogs</Link>
+            <Link
+              className={Location.pathname === "/Blogs" ? "active" : ""}
+              to="/Blogs"
+            >
+              Blogs
+            </Link>
           </li>
           <li>
-            <Link to="/Contact">Contact</Link>
+            <Link
+              className={Location.pathname === "/Contact" ? "active" : ""}
+              to="/Contact"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
         <Contact className="contactBtn">Contact</Contact>
