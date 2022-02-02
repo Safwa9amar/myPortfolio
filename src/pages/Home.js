@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { H1, H2, Text } from "../all_in_one";
+import { H2, Text } from "../all_in_one";
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { BiTask } from "react-icons/bi";
 
