@@ -34,8 +34,9 @@ const HomeWrapper = styled.div`
         justify-content: space-evenly;
         align-items: center;
         border: 1px solid #F3D1BF;
-
-
+        @media screen and (max-width : 600px) {
+          font-size: .81rem;
+        }
         .icons{
           width:4rem;
           height: 4rem;
@@ -51,13 +52,17 @@ const HomeWrapper = styled.div`
           background: #EF6C57;
           font-size: 2rem;
           color: #FFF;
+        
          
         }
         .body{
           & span{
             color: red;
             font-size: 1.3rem;
-           
+            font-weight: bold;
+            @media screen and (max-width : 600px) {
+            font-size: 1rem;
+          }
           }
         }
       }
