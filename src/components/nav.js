@@ -185,22 +185,19 @@ const Navbar = (props) => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: 
-        
-       
-          Location.pathname === "/"
-            ? ['Front End Developer' , 'Web designer' , '5 Years Experience']
-            : Location.pathname === "/Services"
-            ? "Speed settings, try diffrent values untill you get good results"
-            : Location.pathname === "/Projects"
-            ? "Speed settings, try diffrent values untill you get good results"
-            : Location.pathname === "/Blogs"
-            ? "Speed settings, try diffrent values untill you get good results"
-            : Location.pathname === "/Contact"
-            ? "Speed settings, try diffrent values untill you get good results"
-            : ""
-        
-      , // Strings to display
+      strings:
+        Location.pathname === "/"
+          ? ["Front End Developer", "Web designer", "5 Years Experience"]
+          : Location.pathname === "/Services"
+          ? ["Speed settings, try diffrent values untill you get good results"]
+          : Location.pathname === "/Projects"
+          ? ["Speed settings, try diffrent values untill you get good results"]
+          : Location.pathname === "/Blogs"
+          ? ["Speed settings, try diffrent values untill you get good results"]
+          : Location.pathname === "/Contact"
+          ? ["Speed settings, try diffrent values untill you get good results"]
+          : "", // Strings to display
+
       // Speed settings, try diffrent values untill you get good results
       startDelay: 300,
       typeSpeed: 50,
