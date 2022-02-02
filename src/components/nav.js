@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import Typed from "typed.js";
 
 const Nav = styled.div`
   display: flex;
@@ -179,6 +181,39 @@ const MenuBtn = styled.div`
 const Navbar = (props) => {
   const [active, setActive] = useState(false);
   const Location = useLocation();
+  const el = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: 
+        
+       
+          Location.pathname === "/"
+            ? ['Front End Developer' , 'Web designer' , '5 Years Experience']
+            : Location.pathname === "/Services"
+            ? "Speed settings, try diffrent values untill you get good results"
+            : Location.pathname === "/Projects"
+            ? "Speed settings, try diffrent values untill you get good results"
+            : Location.pathname === "/Blogs"
+            ? "Speed settings, try diffrent values untill you get good results"
+            : Location.pathname === "/Contact"
+            ? "Speed settings, try diffrent values untill you get good results"
+            : ""
+        
+      , // Strings to display
+      // Speed settings, try diffrent values untill you get good results
+      startDelay: 300,
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 100,
+      loop: true,
+    });
+
+    // Destropying
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <Nav className="Nav" active={active}>
       <FlexRow className="nav_list">
@@ -238,9 +273,7 @@ const Navbar = (props) => {
             ? "Contact"
             : ""}
         </H1>
-        <Text color="white">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, rem.
-        </Text>
+        <Text color="white" ref={el}></Text>
       </About>
       <MenuBtn
         onClick={(e) => {

@@ -1,9 +1,31 @@
-const Blogs = () => {
+import Typed from "typed.js";
+import { useEffect, useRef } from "react";
+
+export default function Blogs() {
+  // Create Ref element.
+  const el = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["Handy", "Mandy", "Candy", "More Strings"], // Strings to display
+      // Speed settings, try diffrent values untill you get good results
+      startDelay: 300,
+      typeSpeed: 50,
+      backSpeed: 100,
+      backDelay: 100,
+    });
+
+    // Destropying
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   return (
     <div>
-      <h1>Blog Articles</h1>;
+      <h1>Hello Developers</h1>
+      {/* Element to display typing strings */}
+      <span ref={el}></span>
     </div>
   );
-};
-
-export default Blogs;
+}
