@@ -40,8 +40,8 @@ const HomeWrapper = styled.div`
           width:4rem;
           height: 4rem;
           @media screen and (max-width : 600px) {
-            width:2rem;
-            height: 2rem;
+            width:3rem;
+            height: 3rem;
             
           }
           display: flex;
@@ -51,17 +51,13 @@ const HomeWrapper = styled.div`
           background: #EF6C57;
           font-size: 2rem;
           color: #FFF;
-          @media screen and (max-width : 600px) {
-            font-size: 1rem;
-          }
+         
         }
         .body{
           & span{
             color: red;
             font-size: 1.3rem;
-            @media screen and (max-width : 600px) {
-            font-size: 1rem;
-          }
+           
           }
         }
       }
