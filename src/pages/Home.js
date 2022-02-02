@@ -71,8 +71,14 @@ const HomeWrapper = styled.div`
         grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
-        margin:.9rem;
+        margin:.5rem;
+        & p {
+        text-align: left;
+        padding: 0.1rem;
+        border-bottom:1px solid #ef6c57;
+        margin-bottom: .3rem;
 
+        }
     }
   }
 
@@ -96,8 +102,8 @@ const HomeWrapper = styled.div`
         text-align: center;
       }
     .PersonInfo {
-      display: flex;
-      flex-flow: column;
+      /* display: flex;
+      flex-flow: column; */
     }
     }
   }
