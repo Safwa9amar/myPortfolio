@@ -65,23 +65,24 @@ const HomeWrapper = styled.div`
         }
       }
     }
-    & table {
-      td {
-        strong {
-          color: #391400;
-        }
-        border-left: 1px solid;
-        padding: 0.4rem;
-      }
+    .PersonInfo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin:.9rem;
+
     }
   }
 
   @media screen and (max-width: 600px) {
     flex-flow: column;
     align-items: center;
-    section{
+    section {
       flex-flow: column;
       align-items: center;
+      text-align: center;
     }
     .profile_img {
       & img {
@@ -94,6 +95,10 @@ const HomeWrapper = styled.div`
       h2 {
         text-align: center;
       }
+    .PersonInfo {
+      display: flex;
+      flex-flow: column;
+    }
     }
   }
 `;
@@ -115,40 +120,32 @@ const Home = () => {
             partner on the long run, and work as an extension of the merchant's
             team.
           </Text>
-          <table className="MyInfo">
-            <tr>
-              <td>
-                <strong>Name : </strong> Hassani hamza
-              </td>
-              <td>
-                <strong>Birthday : </strong> 22 March 1997
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Degree: </strong>Master
-              </td>
-              <td>
-                <strong>Experience: </strong>5 Years
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Phone: </strong>+213 674 020 244
-              </td>
-              <td>
-                <strong>Email: </strong>Hassanih97@gmail.com
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Address: </strong>Sidi bel Abbes , Ait elarbi ben mahidi
-              </td>
-              <td>
-                <strong>Freelance: </strong>Available
-              </td>
-            </tr>
-          </table>
+          <div className="PersonInfo">
+            <p>
+              <strong>Name : </strong> Hassani hamza
+            </p>
+            <p>
+              <strong>Birthday : </strong> 22 March 1997
+            </p>
+            <p>
+              <strong>Degree: </strong>Master
+            </p>
+            <p>
+              <strong>Experience: </strong>5 Years
+            </p>
+            <p>
+              <strong>Phone: </strong>+213 674 020 244
+            </p>
+            <p>
+              <strong>Phone: </strong>+213 674 020 244
+            </p>
+            <p>
+              <strong>Address: </strong>Sidi bel Abbes , Ait elarbi ben mahidi
+            </p>
+            <p>
+              <strong>Freelance: </strong>Available
+            </p>
+          </div>
           <div className="exp">
             <div className="card">
               <div className="icons">
