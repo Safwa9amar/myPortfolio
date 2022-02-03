@@ -30,7 +30,7 @@ const HomeWrapper = styled.div`
 
     margin: 1rem;
     padding: 0.1rem;
-    width: 50vw;
+    width: 60vw;
     .exp {
       display: flex;
       flex-flow: row;
@@ -130,7 +130,7 @@ const HomeWrapper = styled.div`
       }
     }
     .description {
-      width: 80vw;
+      width: 100vw;
       & h5,
       h2 {
         text-align: center;
@@ -143,7 +143,7 @@ const HomeWrapper = styled.div`
     }
   }
   .card-wrapper {
-    width: 50vw;
+     Width:60vw;
     display: flex;
     justify-content: space-between;
     margin: 2rem;
@@ -157,6 +157,7 @@ const HomeWrapper = styled.div`
       }
     }
     @media screen and (max-width: 600px) {
+      Width:100vw;
       display: flex;
       flex-flow: column;
     }
