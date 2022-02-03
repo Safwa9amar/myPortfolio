@@ -203,7 +203,6 @@ const Navbar = (props) => {
       typeSpeed: 50,
       backSpeed: 50,
       backDelay: 100,
-      loop: true,
     });
 
     // Destropying

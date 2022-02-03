@@ -10,7 +10,7 @@ const H1 = styled.h1`
 `;
 const H2 = styled.h2`
   font-family: Epilogue;
-  font-size: 3.5rem ;
+  font-size: 3.5rem;
   line-height: 64px;
   letter-spacing: -1px;
   color: ${(props) => (props.color === "white" ? "whitesmoke" : "#391400")};
@@ -65,4 +65,64 @@ const TextSmall = styled.p`
   color: rgba(57, 20, 0, 0.64);
 `;
 
-export { H1, H2, H3, H4, H5, Label, TextBig, Text, TextSmall };
+const Title = styled.div``;
+const SubTitle = styled.div``;
+const CardBody = styled.div``;
+
+const Card = styled.div`
+  ${Title} {
+    text-transform: capitalize;
+    font-weight: 800;
+  }
+  ${SubTitle} {
+    color: #333232;
+    font-weight: 500;
+  }
+  ${CardBody} {
+    position: relative;
+
+    text-align: justify;
+    color: grey;
+    animation: ${(props) => (props.activeView === true ? "animate" : "")} 2s
+      forwards;
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -10px;
+    width: 10px;
+    height: 10px;
+    border: 5px solid #ef6c57;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 20px #ffffff;
+  }
+
+  @keyframes animate {
+    from {
+      opacity: 0;
+      /* transform: scale(-1); */
+      top: 20px;
+    }
+    to {
+      top: 0px;
+      opacity: 1;
+      /* transform: scale(1); */
+    }
+  }
+`;
+export {
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  Label,
+  TextBig,
+  Text,
+  TextSmall,
+  Card,
+  Title,
+  SubTitle,
+  CardBody,
+};

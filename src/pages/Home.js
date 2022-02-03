@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { H1, H2, Text } from "../all_in_one";
+import { H1, H2, H5, Text  ,Card, Title , SubTitle , CardBody} from "../all_in_one";
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { BiTask } from "react-icons/bi";
+import { useInView } from "react-intersection-observer";
 
 const HomeWrapper = styled.div`
   section {
@@ -9,22 +10,27 @@ const HomeWrapper = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
+  }
 
-  }
-  .profile_img {
-    margin: 1rem;
-    & img {
-      border-radius: 0.51rem;
-      filter: saturate(1.6);
-    }
-  }
   .description {
+    .profile_img {
+      opacity: 0;
+      animation: animate 2s forwards;
+      @keyframes animate {
+        from {
+          opacity: 0;
+          /* transform: scale(-1); */
+        }
+        to {
+          opacity: 1;
+          /* transform: scale(1); */
+        }
+      }
+    }
+
     margin: 1rem;
     padding: 0.1rem;
     width: 50vw;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
     .exp {
       display: flex;
       flex-flow: row;
@@ -136,19 +142,45 @@ const HomeWrapper = styled.div`
       }
     }
   }
+  .card-wrapper {
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    .edu_exp {
+      border-left: 1px solid #ef6c57;
+      margin: 1rem;
+      padding: 1rem;
+      position: relative;
+      & h5 {
+        text-transform: capitalize;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      display: flex;
+      flex-flow: column;
+    }
+ 
+  }
 `;
 
+
+
 const Home = () => {
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
   return (
     <HomeWrapper>
       <section>
-        <div className="profile_img">
-          <img
-            src="https://image.freepik.com/photos-gratuite/gros-plan-portrait-jeune-bel-homme-affaires-pensif-confiant-travaillant-assis-table-ecrit-dans-cahier-interieur-bureau-moderne-blanc_176420-6562.jpg"
-            alt="puc"
-          />
-        </div>
         <div className="description">
+          <div className="profile_img">
+            <img
+              src="https://image.freepik.com/photos-gratuite/gros-plan-portrait-jeune-bel-homme-affaires-pensif-confiant-travaillant-assis-table-ecrit-dans-cahier-interieur-bureau-moderne-blanc_176420-6562.jpg"
+              alt="puc"
+            />
+          </div>
           <div className="text_back">
             <H1>Dev</H1>
             <H2>Designer & Web Developer</H2>
@@ -208,6 +240,61 @@ const Home = () => {
           <H1>quality</H1>
           <H2>education & experience</H2>
         </div>
+        <div className="card-wrapper">
+          <div className="edu_exp">
+            <H5>education</H5>
+            <Card ref={ref} activeView={inView}>
+              <Title>Master In CSE</Title>
+              <SubTitle>
+                Cambridge University | 2000 - 2050
+              </SubTitle>
+              <CardBody>
+                Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit
+                amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd
+                sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam
+              </CardBody>
+            </Card>
+            <Card ref={ref} activeView={inView}>
+              <Title>Master In CSE</Title>
+              <SubTitle>
+                Cambridge University | 2000 - 2050
+              </SubTitle>
+              <CardBody>
+                Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit
+                amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd
+                sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam
+              </CardBody>
+            </Card>
+            
+          </div>
+          <div className="edu_exp">
+            <H5>education</H5>
+            <Card ref={ref} activeView={inView}>
+              <Title>Master In CSE</Title>
+              <SubTitle>
+                Cambridge University | 2000 - 2050
+              </SubTitle>
+              <CardBody>
+                Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit
+                amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd
+                sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam
+              </CardBody>
+            </Card>
+            <Card ref={ref} activeView={inView}>
+              <Title>Master In CSE</Title>
+              <SubTitle>
+                Cambridge University | 2000 - 2050
+              </SubTitle>
+              <CardBody>
+                Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit
+                amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd
+                sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam
+              </CardBody>
+            </Card>
+            
+          </div>
+        </div>
+       
       </section>
     </HomeWrapper>
   );
