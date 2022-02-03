@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { H2, Text } from "../all_in_one";
+import { H1, H2, Text } from "../all_in_one";
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { BiTask } from "react-icons/bi";
 
@@ -7,14 +7,15 @@ const HomeWrapper = styled.div`
   section {
     margin: 3rem;
     display: flex;
-    justify-content: space-evenly;
+    flex-flow: column;
+    align-items: center;
+
   }
   .profile_img {
     margin: 1rem;
     & img {
       border-radius: 0.51rem;
       filter: saturate(1.6);
-      width: 40vw;
     }
   }
   .description {
@@ -66,19 +67,44 @@ const HomeWrapper = styled.div`
       }
     }
     .PersonInfo {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        margin:.5rem;
-        & p {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      margin: 0.5rem;
+      & p {
         text-align: left;
-        padding: 0.1rem;
-        border-bottom:1px solid #f3d1bf;
-        margin-bottom: .3rem;
+        padding: 0.2rem;
+        border-bottom: 1px solid #f3d1bf;
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+  .text_back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    & h2 {
+      position: absolute;
+      font-size: calc(1.375rem + 1.5vw);
+      text-transform: capitalize;
+    }
+    & h1 {
+      text-transform: uppercase;
+      font-size: calc(2.125rem + 5.5vw);
+      color: transparent;
+      -webkit-text-stroke: 1px rgb(212, 212, 212);
+    }
+    @media screen and (max-width: 600px) {
+      & h2 {
+        font-size: calc(1.375rem + 1.5vw);
+      }
 
-        }
+      & h1 {
+        font-size: calc(2.125rem + 10.5vw);
+      }
     }
   }
 
@@ -92,7 +118,9 @@ const HomeWrapper = styled.div`
     }
     .profile_img {
       & img {
-        width: 80vw;
+        border-radius: 50%;
+        width: calc(10px + 50vw);
+        height: calc(10px + 50vw);
       }
     }
     .description {
@@ -100,11 +128,12 @@ const HomeWrapper = styled.div`
       & h5,
       h2 {
         text-align: center;
+        font-size: calc(1.575rem + 3.9vw) !important;
       }
-    .PersonInfo {
-      /* display: flex;
-      flex-flow: column; */
-    }
+      .PersonInfo {
+        display: flex;
+        flex-flow: column;
+      }
     }
   }
 `;
@@ -120,7 +149,10 @@ const Home = () => {
           />
         </div>
         <div className="description">
-          <H2>Designer & Web Developer</H2>
+          <div className="text_back">
+            <H1>Dev</H1>
+            <H2>Designer & Web Developer</H2>
+          </div>
           <Text justify>
             Ability to put themselves in the merchant's shoes. It is meant to
             partner on the long run, and work as an extension of the merchant's
@@ -129,9 +161,6 @@ const Home = () => {
           <div className="PersonInfo">
             <p>
               <strong>Name : </strong> Hassani hamza
-            </p>
-            <p>
-              <strong>Birthday : </strong> 22 March 1997
             </p>
             <p>
               <strong>Degree: </strong>Master
@@ -175,7 +204,10 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <H2>EDUCATION & EXPERICENCE</H2>
+        <div className="text_back">
+          <H1>quality</H1>
+          <H2>education & experience</H2>
+        </div>
       </section>
     </HomeWrapper>
   );

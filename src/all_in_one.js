@@ -10,7 +10,7 @@ const H1 = styled.h1`
 `;
 const H2 = styled.h2`
   font-family: Epilogue;
-  font-size: 3, 5rem;
+  font-size: 3.5rem ;
   line-height: 64px;
   letter-spacing: -1px;
   color: ${(props) => (props.color === "white" ? "whitesmoke" : "#391400")};
