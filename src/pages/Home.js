@@ -130,7 +130,7 @@ const HomeWrapper = styled.div`
       }
     }
     .description {
-      width: 100vw;
+      width: 80vw;
       & h5,
       h2 {
         text-align: center;
