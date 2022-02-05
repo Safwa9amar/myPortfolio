@@ -46,7 +46,11 @@ const HomeWrapper = styled.div`
 
     margin: 1rem;
     padding: 0.1rem;
+<<<<<<< HEAD
     width: 75vw;
+=======
+    width: 60vw;
+>>>>>>> 23e8b1f51718b3bd4bfc9e4e6e503629bf88b07f
     .exp {
       display: flex;
       flex-flow: row;
@@ -133,7 +137,11 @@ const HomeWrapper = styled.div`
     }
   }
   .card-wrapper {
+<<<<<<< HEAD
     width: 75vw;
+=======
+     Width:60vw;
+>>>>>>> 23e8b1f51718b3bd4bfc9e4e6e503629bf88b07f
     display: flex;
     justify-content: space-between;
     margin: 2rem;
@@ -147,6 +155,7 @@ const HomeWrapper = styled.div`
       }
     }
     @media screen and (max-width: 600px) {
+      Width:100vw;
       display: flex;
       flex-flow: column;
     }
