@@ -1,5 +1,18 @@
 import styled from "styled-components";
-import { H1, H2, H5, Text  ,Card, Title , SubTitle , CardBody} from "../all_in_one";
+import mydata from "../components/data";
+import {
+  H1,
+  H2,
+  H5,
+  Text,
+  Card,
+  Title,
+  SubTitle,
+  CardBody,
+  Progress,
+  Flex,
+  TextWithBg,
+} from "../all_in_one";
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { BiTask } from "react-icons/bi";
 import { useInView } from "react-intersection-observer";
@@ -13,7 +26,10 @@ const HomeWrapper = styled.div`
   }
 
   .description {
+    display: flex;
+    flex-flow: column;
     .profile_img {
+      align-self: center;
       opacity: 0;
       animation: animate 2s forwards;
       @keyframes animate {
@@ -30,7 +46,7 @@ const HomeWrapper = styled.div`
 
     margin: 1rem;
     padding: 0.1rem;
-    width: 50vw;
+    width: 75vw;
     .exp {
       display: flex;
       flex-flow: row;
@@ -87,32 +103,6 @@ const HomeWrapper = styled.div`
       }
     }
   }
-  .text_back {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem;
-    & h2 {
-      position: absolute;
-      font-size: calc(1.375rem + 1.5vw);
-      text-transform: capitalize;
-    }
-    & h1 {
-      text-transform: uppercase;
-      font-size: calc(2.125rem + 5.5vw);
-      color: transparent;
-      -webkit-text-stroke: 1px rgb(212, 212, 212);
-    }
-    @media screen and (max-width: 600px) {
-      & h2 {
-        font-size: calc(1.375rem + 1.5vw);
-      }
-
-      & h1 {
-        font-size: calc(2.125rem + 10.5vw);
-      }
-    }
-  }
 
   @media screen and (max-width: 600px) {
     flex-flow: column;
@@ -143,7 +133,7 @@ const HomeWrapper = styled.div`
     }
   }
   .card-wrapper {
-    width: 50vw;
+    width: 75vw;
     display: flex;
     justify-content: space-between;
     margin: 2rem;
@@ -160,11 +150,8 @@ const HomeWrapper = styled.div`
       display: flex;
       flex-flow: column;
     }
- 
   }
 `;
-
-
 
 const Home = () => {
   const { ref, inView } = useInView({
@@ -181,10 +168,10 @@ const Home = () => {
               alt="puc"
             />
           </div>
-          <div className="text_back">
+          <TextWithBg>
             <H1>Dev</H1>
             <H2>Designer & Web Developer</H2>
-          </div>
+          </TextWithBg>
           <Text justify>
             Ability to put themselves in the merchant's shoes. It is meant to
             partner on the long run, and work as an extension of the merchant's
@@ -236,18 +223,16 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="text_back">
+        <TextWithBg>
           <H1>quality</H1>
           <H2>education & experience</H2>
-        </div>
+        </TextWithBg>
         <div className="card-wrapper">
           <div className="edu_exp">
             <H5>education</H5>
             <Card ref={ref} activeView={inView}>
               <Title>Master In CSE</Title>
-              <SubTitle>
-                Cambridge University | 2000 - 2050
-              </SubTitle>
+              <SubTitle>Cambridge University | 2000 - 2050</SubTitle>
               <CardBody>
                 Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit
                 amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd
@@ -256,24 +241,19 @@ const Home = () => {
             </Card>
             <Card ref={ref} activeView={inView}>
               <Title>Master In CSE</Title>
-              <SubTitle>
-                Cambridge University | 2000 - 2050
-              </SubTitle>
+              <SubTitle>Cambridge University | 2000 - 2050</SubTitle>
               <CardBody>
                 Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit
                 amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd
                 sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam
               </CardBody>
             </Card>
-            
           </div>
           <div className="edu_exp">
             <H5>education</H5>
             <Card ref={ref} activeView={inView}>
               <Title>Master In CSE</Title>
-              <SubTitle>
-                Cambridge University | 2000 - 2050
-              </SubTitle>
+              <SubTitle>Cambridge University | 2000 - 2050</SubTitle>
               <CardBody>
                 Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit
                 amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd
@@ -282,22 +262,55 @@ const Home = () => {
             </Card>
             <Card ref={ref} activeView={inView}>
               <Title>Master In CSE</Title>
-              <SubTitle>
-                Cambridge University | 2000 - 2050
-              </SubTitle>
+              <SubTitle>Cambridge University | 2000 - 2050</SubTitle>
               <CardBody>
                 Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit
                 amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd
                 sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam
               </CardBody>
             </Card>
-            
           </div>
         </div>
-       
+      </section>
+      <section>
+        <TextWithBg>
+          <H1>Skills</H1>
+          <H2>Skills</H2>
+        </TextWithBg>
+
+        <Flex row w="75vw" between>
+          <Flex col half margin="1rem">
+            <H5>Languages</H5>
+            {PropgresSkillsData(mydata.skills.programing_Langauges)}
+          </Flex>
+          <Flex col half margin="1rem">
+            <H5>Frameworks</H5>
+            {PropgresSkillsData(mydata.skills.framework)}
+          </Flex>
+          <Flex col half margin="1rem">
+          <H5>design and others</H5>
+
+            {PropgresSkillsData(mydata.skills.design)}
+          </Flex>
+        </Flex>
       </section>
     </HomeWrapper>
   );
+};
+
+const PropgresSkillsData = function (data) {
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+  return data.map((el) => {
+    return (
+      <Progress value={el.precent} key={el.id} ref={ref} activeView={inView}>
+        <span>{el.name}</span>
+        <span>{el.precent}%</span>
+      </Progress>
+    );
+  });
 };
 
 export default Home;

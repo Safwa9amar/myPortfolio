@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const H1 = styled.h1`
   font-family: Epilogue;
@@ -80,10 +80,9 @@ const Card = styled.div`
   }
   ${CardBody} {
     position: relative;
-
     text-align: justify;
     color: grey;
-    animation: ${(props) => (props.activeView === true ? "animate" : "")} 2s
+    animation: ${(props) => (props.activeView === true ? "animate" : "")} 1s
       forwards;
   }
   &:before {
@@ -101,13 +100,108 @@ const Card = styled.div`
   @keyframes animate {
     from {
       opacity: 0;
-      /* transform: scale(-1); */
-      top: 20px;
     }
     to {
       top: 0px;
       opacity: 1;
-      /* transform: scale(1); */
+    }
+  }
+`;
+const ProgressWidth = (w) => keyframes`
+from {
+      width: 0;
+    }
+    to {
+      width: ${w}%;
+    }
+`;
+const Progress = styled.div`
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 10px;
+  margin: 1rem;
+  border-radius: 1rem;
+  background-color: #eee;
+  & span {
+    position: relative;
+    top: calc(-100% + -10px);
+    text-transform: capitalize;
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: ${(props) => props.value + "%"};
+    border-radius: 1rem;
+    background-color: #e69367;
+    // transition: width ease-in 500ms;
+    animation: ${(props) =>
+        props.activeView === true ? ProgressWidth(props.value) : ""}
+      2s forwards;
+  }
+
+  @keyframes animateProgress {
+  }
+`;
+
+const Flex = styled.div`
+  display: flex;
+  flex-flow: ${(props) => (props.col ? "column" : props.row ? "row" : "")}
+    ${(props) => (props.wrap ? "wrap" : props.nowrap ? "nowrap" : "")};
+  justify-content: ${(props) =>
+    props.center
+      ? "center"
+      : props.between
+      ? "space-between"
+      : props.around
+      ? "space-around"
+      : props.evenly
+      ? "space-evenly"
+      : ""};
+  align-items: ${(props) =>
+    props.align_center
+      ? "center"
+      : props.align_base
+      ? "baseline"
+      : props.align_end
+      ? "flex-end"
+      : "flex-start"};
+  margin: ${(props) => props.margin};
+  width: ${(props) => (props.full ? "100%" : props.half ? "50%" : props.w)};
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const TextWithBg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  & h2 {
+    position: absolute;
+    font-size: calc(1.375rem + 1.5vw);
+    text-transform: capitalize;
+  }
+  & h1 {
+    text-transform: uppercase;
+    font-size: calc(2.125rem + 5.5vw);
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(212, 212, 212);
+  }
+  @media screen and (max-width: 600px) {
+    & h2 {
+      font-size: calc(1.375rem + 1.5vw);
+    }
+
+    & h1 {
+      font-size: calc(2.125rem + 10.5vw);
     }
   }
 `;
@@ -125,4 +219,7 @@ export {
   Title,
   SubTitle,
   CardBody,
+  Progress,
+  Flex,
+  TextWithBg,
 };
