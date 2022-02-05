@@ -134,7 +134,7 @@ const Progress = styled.div`
     display: block;
     position: absolute;
     height: 100%;
-    width: ${(props) => props.value + "%"};
+    // width: ${(props) => props.value + "%"};
     border-radius: 1rem;
     background-color: #e69367;
     // transition: width ease-in 500ms;
