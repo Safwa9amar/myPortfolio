@@ -5,8 +5,8 @@ const Container = styled.div`
   height: 35vh;
   background-color: #28293e;
   color: #fff;
-  a{
-      font-size: 2rem;
+  a {
+    font-size: 2rem;
   }
 `;
 
@@ -14,14 +14,14 @@ const Footer = () => {
   return (
     <Container>
       <Flex col h_full evenly align_center>
-        <Flex row around  half>
-          <a href="#">
+        <Flex row around half>
+          <a href="https://github.com/Safwa9amar">
             <AiFillGithub />
           </a>
-          <a href="#">
+          <a href="https://www.facebook.com/hamza.97gamar">
             <AiFillFacebook />
           </a>
-          <a href="#">
+          <a href="mailto:hassanih97@gmail.com">
             <AiFillMail />
           </a>
         </Flex>
