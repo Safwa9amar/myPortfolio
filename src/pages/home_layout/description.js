@@ -1,15 +1,19 @@
 import styled from "styled-components";
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { BiTask } from "react-icons/bi";
-import { Text, H1, H2, TextWithBg } from "../../components/all_in_one";
+import { Text, H1, H2, TextWithBg, Flex } from "../../components/all_in_one";
+import mydata from "../../components/data";
 const Div = styled.div`
-  .description {
-    display: flex;
-    flex-flow: column;
-    .profile_img {
-      align-self: center;
-      opacity: 0;
+  width: 80vw;
+  .profile_img {
+    align-self: stretch;
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 2px 1px #615d5d7d;
       animation: animate 2s forwards;
+      display: block;
       @keyframes animate {
         from {
           opacity: 0;
@@ -21,10 +25,13 @@ const Div = styled.div`
         }
       }
     }
-
+  }
+  .description {
+    display: flex;
+    flex-flow: column;
     margin: 1rem;
     padding: 0.1rem;
-    width: 75vw;
+    /* width: 75vw; */
     .exp {
       display: flex;
       flex-flow: row;
@@ -85,12 +92,11 @@ const Div = styled.div`
   @media screen and (max-width: 600px) {
     flex-flow: column;
     align-items: center;
-    section {
-      flex-flow: column;
-      align-items: center;
-      text-align: center;
-    }
+
     .profile_img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       & img {
         border-radius: 50%;
         width: calc(10px + 50vw);
@@ -110,74 +116,94 @@ const Div = styled.div`
       }
     }
   }
- 
 `;
 
 const Description = () => {
   return (
     <Div>
-      <div className="description">
-        <div className="profile_img">
-          <img
-            src="https://image.freepik.com/photos-gratuite/gros-plan-portrait-jeune-bel-homme-affaires-pensif-confiant-travaillant-assis-table-ecrit-dans-cahier-interieur-bureau-moderne-blanc_176420-6562.jpg"
-            alt="puc"
-          />
-        </div>
+      <Flex col around align_center>
         <TextWithBg>
           <H1>Dev</H1>
           <H2>Designer & Web Developer</H2>
         </TextWithBg>
-        <Text justify>
-          Ability to put themselves in the merchant's shoes. It is meant to
-          partner on the long run, and work as an extension of the merchant's
-          team.
-        </Text>
-        <div className="PersonInfo">
-          <p>
-            <strong>Name : </strong> Hassani hamza
-          </p>
-          <p>
-            <strong>Degree: </strong>Master
-          </p>
-          <p>
-            <strong>Experience: </strong>5 Years
-          </p>
-          <p>
-            <strong>Email: </strong>Hassanih97@gmail.com
-          </p>
-          <p>
-            <strong>Phone: </strong>+213 674 020 244
-          </p>
-          <p>
-            <strong>Address: </strong>Sidi bel Abbes , Ait elarbi ben mahidi
-          </p>
-          <p>
-            <strong>Freelance: </strong>Available
-          </p>
-        </div>
-        <div className="exp">
-          <div className="card">
-            <div className="icons">
-              <BiTask />
-            </div>
-            <div className="body">
-              <span>5 Years</span>
-              <br></br> of experience
+        <Flex align_center>
+          <div className="profile_img">
+            <img
+              src="https://image.freepik.com/photos-gratuite/gros-plan-portrait-jeune-bel-homme-affaires-pensif-confiant-travaillant-assis-table-ecrit-dans-cahier-interieur-bureau-moderne-blanc_176420-6562.jpg"
+              alt="puc"
+            />
+          </div>
+          <div className="description">
+            <Text justify>
+              Ability to put themselves in the merchant's shoes. It is meant to
+              partner on the long run, and work as an extension of the
+              merchant's team.
+            </Text>
+            <div className="PersonInfo">{Personal(mydata.about)}</div>
+            <div className="exp">
+              <div className="card">
+                <div className="icons">
+                  <BiTask />
+                </div>
+                <div className="body">
+                  <span>{mydata.about.Experience}</span>
+                  <br></br> of experience
+                </div>
+              </div>
+              <div className="card">
+                <div className="icons">
+                  <MdOutlineBusinessCenter />
+                </div>
+                <div className="body">
+                  <span>{mydata.about.Projects}</span>
+
+                  <br></br>Projects Done
+                </div>
+              </div>
             </div>
           </div>
-          <div className="card">
-            <div className="icons">
-              <MdOutlineBusinessCenter />
-            </div>
-            <div className="body">
-              <span> 33+ </span>
-              <br></br>Projects Done
-            </div>
-          </div>
-        </div>
-      </div>
+        </Flex>
+      </Flex>
     </Div>
   );
 };
 
+const Personal = (data) => {
+  return (
+    <>
+      <p>
+        <strong>Name : </strong>
+        {data.Name}
+      </p>
+      <p>
+        <strong>birthday : </strong>
+        {data.birthday}
+      </p>
+      <p>
+        <strong>Degree : </strong>
+        {data.Degree}
+      </p>
+      <p>
+        <strong>Experience : </strong>
+        {data.Experience}
+      </p>
+      <p>
+        <strong>Phone : </strong>
+        {data.Phone}
+      </p>
+      <p>
+        <strong>Email : </strong>
+        {data.Email}
+      </p>
+      <p>
+        <strong>Address : </strong>
+        {data.Address}
+      </p>
+      <p>
+        <strong>FreeLance : </strong>
+        {data.FreeLance}
+      </p>
+    </>
+  );
+};
 export default Description;

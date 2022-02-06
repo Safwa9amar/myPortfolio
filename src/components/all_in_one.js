@@ -32,7 +32,9 @@ const H5 = styled.h5`
   font-size: 16px;
   line-height: 32px;
   letter-spacing: 3px;
+  text-transform: capitalize;
   color: #ef6d58;
+  margin: 1rem;
 `;
 const Label = styled.label`
   font-family: Epilogue;
@@ -70,6 +72,9 @@ const SubTitle = styled.div``;
 const CardBody = styled.div``;
 
 const Card = styled.div`
+  position: relative;
+  border-left: 1px solid #ef6c57;
+  padding: 1rem;
   ${Title} {
     text-transform: capitalize;
     font-weight: 800;
@@ -134,10 +139,8 @@ const Progress = styled.div`
     display: block;
     position: absolute;
     height: 100%;
-    // width: ${(props) => props.value + "%"};
     border-radius: 1rem;
     background-color: #e69367;
-    // transition: width ease-in 500ms;
     animation: ${(props) =>
         props.activeView === true ? ProgressWidth(props.value) : ""}
       2s forwards;
@@ -171,6 +174,8 @@ const Flex = styled.div`
       : "flex-start"};
   margin: ${(props) => props.margin};
   width: ${(props) => (props.full ? "100%" : props.half ? "50%" : props.w)};
+  height: ${(props) =>
+    props.h_full ? "100%" : props.h_half ? "50%" : props.h};
   @media screen and (max-width: 600px) {
     width: 100%;
     flex-flow: column;
@@ -184,6 +189,7 @@ const TextWithBg = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2rem;
+
   & h2 {
     position: absolute;
     font-size: calc(1.375rem + 1.5vw);
@@ -194,6 +200,7 @@ const TextWithBg = styled.div`
     font-size: calc(2.125rem + 5.5vw);
     color: transparent;
     -webkit-text-stroke: 1px rgb(212, 212, 212);
+    filter: blur(1px);
   }
   @media screen and (max-width: 600px) {
     & h2 {

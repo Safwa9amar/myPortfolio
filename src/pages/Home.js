@@ -4,6 +4,7 @@ import { H1, H2, H5, Flex, TextWithBg } from "../components/all_in_one";
 import Description from "./home_layout/description";
 import EduExp from "./home_layout/education_exp";
 import PropgresSkillsData from "./home_layout/skills";
+import ContactForm from "./home_layout/contact";
 
 const HomeWrapper = styled.div`
   section {
@@ -11,6 +12,7 @@ const HomeWrapper = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
+    /* width: 100vw; */
   }
 `;
 
@@ -52,6 +54,7 @@ const Home = () => {
           <H1>CONTACT</H1>
           <H2>CONTACT ME</H2>
         </TextWithBg>
+        <ContactForm></ContactForm>
       </section>
     </HomeWrapper>
   );
