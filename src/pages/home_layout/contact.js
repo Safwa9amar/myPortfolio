@@ -49,7 +49,7 @@ const Form = styled.form`
 
 const ContactForm = () => {
   return (
-    <Form name="contact" method="POST" data-netlify="true">
+    <Form name="contact-form" method="POST" data-netlify="true">
       <Flex col between align_center>
         <Flex row full between align_center>
           <input
@@ -79,7 +79,7 @@ const ContactForm = () => {
         </Flex>
         <button type="submit">Send message</button>
       </Flex>
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="contact-form" />
     </Form>
   );
 };
