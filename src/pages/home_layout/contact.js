@@ -8,17 +8,17 @@ const Form = styled.form`
     padding: 1rem;
     border-radius: 30px;
     border: 0.1rem solid #eee;
-    margin: .51rem;
+    margin: 0.51rem;
     outline: none;
     align-self: stretch;
-    flex:1;
+    flex: 1;
   }
   & textarea {
     display: block;
     padding: 1rem;
     border-radius: 10px;
     border: 0.1rem solid #eee;
-    margin: .51rem;
+    margin: 0.51rem;
     outline: none;
     align-self: stretch;
   }
@@ -42,15 +42,14 @@ const Form = styled.form`
       box-shadow: 0 0 2px 0px red;
     }
   }
-  @media screen and (max-width:600px){
-      width:auto;
-  } 
+  @media screen and (max-width: 600px) {
+    width: auto;
+  }
 `;
 
 const ContactForm = () => {
   return (
     <Form name="contact" method="POST" data-netlify="true">
-
       <Flex col between align_center>
         <Flex row full between align_center>
           <input
@@ -80,6 +79,7 @@ const ContactForm = () => {
         </Flex>
         <button type="submit">Send message</button>
       </Flex>
+      <input type="hidden" name="form-name" value="contact" />
     </Form>
   );
 };
