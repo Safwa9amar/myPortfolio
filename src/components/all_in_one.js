@@ -82,12 +82,14 @@ const Card = styled.div`
   ${SubTitle} {
     color: #333232;
     font-weight: 500;
+    animation: ${(props) => (props.activeView === true ? "animate" : "")} 1s
+      forwards;
   }
   ${CardBody} {
     position: relative;
     text-align: justify;
     color: grey;
-    animation: ${(props) => (props.activeView === true ? "animate" : "")} 1s
+    animation: ${(props) => (props.activeView === true ? "animate" : "")} 3s
       forwards;
   }
   &:before {
@@ -144,9 +146,6 @@ const Progress = styled.div`
     animation: ${(props) =>
         props.activeView === true ? ProgressWidth(props.value) : ""}
       2s forwards;
-  }
-
-  @keyframes animateProgress {
   }
 `;
 

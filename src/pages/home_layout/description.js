@@ -8,20 +8,19 @@ const Div = styled.div`
   .profile_img {
     align-self: stretch;
     & img {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 2px 1px #615d5d7d;
-      animation: animate 2s forwards;
       display: block;
+      width: 100%;
+      height:100%;
+      border-radius: 5px;
+      box-shadow: 0 0 1px 1px #615d5d7d;
+      animation: animate 2s forwards;
+
       @keyframes animate {
         from {
-          opacity: 0;
-          /* transform: scale(-1); */
+          filter:blur(16px)
         }
         to {
-          opacity: 1;
-          /* transform: scale(1); */
+          filter:blur(0)
         }
       }
     }
@@ -31,7 +30,8 @@ const Div = styled.div`
     flex-flow: column;
     margin: 1rem;
     padding: 0.1rem;
-    /* width: 75vw; */
+    /* width: 50%; */
+
     .exp {
       display: flex;
       flex-flow: row;
@@ -79,7 +79,6 @@ const Div = styled.div`
       grid-template-rows: repeat(4, 1fr);
       grid-column-gap: 0px;
       grid-row-gap: 0px;
-      margin: 0.5rem;
       & p {
         text-align: left;
         padding: 0.2rem;

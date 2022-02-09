@@ -8,7 +8,7 @@ import ContactForm from "./home_layout/contact";
 
 const HomeWrapper = styled.div`
   section {
-    margin: 3rem;
+    margin: 1rem;
     display: flex;
     flex-flow: column;
     align-items: center;

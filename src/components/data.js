@@ -5,7 +5,7 @@ let mydata = {
     Degree: "Master",
     Experience: "5 Years",
     Projects: 10,
-    Phone: "+2130674020244",
+    Phone: "+213674020244",
     Email: "hassanih97@gmail.com",
     Address: "sidi bel abbes , ait elarbi ben mhidi",
     FreeLance: "available",

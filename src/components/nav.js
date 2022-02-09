@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-
+import { AiOutlineHome, AiFillProject, AiFillContacts } from "react-icons/ai";
+import { MdOutlineDesignServices } from "react-icons/md";
+import { ImBlog } from "react-icons/im";
 const Nav = styled.div`
   display: flex;
   flex-flow: column;
@@ -18,18 +20,18 @@ const Nav = styled.div`
   @media screen and (max-width: 600px) {
     &.Nav {
       & ul {
+        position: fixed;
         flex-flow: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         z-index: 111;
         height: 100vh;
         width: 50vw;
-        background: #464764;
-        position: absolute;
+        background: #464764f0;
         left: ${(props) => (props.active === true ? "0" : "-50vw")};
         transition: ease-out 300ms;
         & li {
-          color: black;
+          padding-left: 10%;
           font-weight: 500;
           border-bottom: solid 1px #3c3735;
         }
@@ -55,41 +57,44 @@ const FlexRow = styled.div`
   & li {
     list-style-type: none;
     margin: 1rem 2rem;
-    & a {
-      text-decoration: none;
-      color: inherit;
-      position: relative;
-      &.active {
-        box-shadow: 1px 20px 17px 0px #d12e2ea1;
-        background: inherit;
-        ::after {
-          content: "";
-          background: #ff460e;
-          width: 100%;
-          height: 1px;
-          left: 0;
-        }
-      }
-
-      &::after {
+    display: flex;
+    align-items: baseline;
+  }
+  & a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    &.active {
+      box-shadow: 1px 20px 17px 0px #d12e2ea1;
+      background: inherit;
+      ::after {
         content: "";
-        display: block;
-        width: 0;
-        background: #ffffff;
-        transition: all 200ms;
-        position: absolute;
-        left: -100%;
+        background: #ff460e;
+        width: 100%;
+        height: 1px;
+        left: 0;
       }
+    }
 
-      &:hover {
-        box-shadow: 1px 20px 17px 0px #eeeeee30;
-        background: inherit;
-        ::after {
-          content: "";
-          width: 100%;
-          height: 1px;
-          left: 0;
-        }
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      background: #ffffff;
+      transition: all 200ms;
+      position: absolute;
+      left: -100%;
+    }
+
+    &:hover {
+      box-shadow: 1px 20px 17px 0px #eeeeee30;
+      background: inherit;
+      ::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        left: 0;
       }
     }
   }
@@ -216,11 +221,13 @@ const Navbar = (props) => {
         <Logo className="logo">H.Safwan</Logo>
         <ul>
           <li>
+            <AiOutlineHome />
             <Link className={Location.pathname === "/" ? "active" : ""} to="/">
               Home
             </Link>
           </li>
           <li>
+            <MdOutlineDesignServices />
             <Link
               className={Location.pathname === "/Services" ? "active" : ""}
               to="/Services"
@@ -229,6 +236,7 @@ const Navbar = (props) => {
             </Link>
           </li>
           <li>
+            <AiFillProject />
             <Link
               className={Location.pathname === "/Projects" ? "active" : ""}
               to="/Projects"
@@ -237,6 +245,7 @@ const Navbar = (props) => {
             </Link>
           </li>
           <li>
+            <ImBlog />
             <Link
               className={Location.pathname === "/Blogs" ? "active" : ""}
               to="/Blogs"
@@ -245,6 +254,7 @@ const Navbar = (props) => {
             </Link>
           </li>
           <li>
+            <AiFillContacts />
             <Link
               className={Location.pathname === "/Contact" ? "active" : ""}
               to="/Contact"
