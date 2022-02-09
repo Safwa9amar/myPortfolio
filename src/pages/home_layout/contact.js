@@ -49,7 +49,8 @@ const Form = styled.form`
 
 const ContactForm = () => {
   return (
-    <Form>
+    <Form name="contact" method="POST" data-netlify="true">
+
       <Flex col between align_center>
         <Flex row full between align_center>
           <input

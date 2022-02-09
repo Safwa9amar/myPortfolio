@@ -259,11 +259,11 @@ const Navbar = (props) => {
               className={Location.pathname === "/Contact" ? "active" : ""}
               to="/Contact"
             >
-              Contact
+              Contact 
             </Link>
           </li>
         </ul>
-        <Contact className="contactBtn">Contact</Contact>
+        <Contact className="contactBtn">Contact Me</Contact>
       </FlexRow>
       <About className="About">
         <H1 color="white">
