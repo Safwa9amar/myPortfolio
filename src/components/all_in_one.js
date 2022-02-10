@@ -123,10 +123,12 @@ height: 4rem;
 display: flex;
 justify-content: center;
 align-items: center;
-border-radius: 100%;
+border-radius: 50%;
 background: #ef6c57;
 font-size: 2rem;
-color: #fff;`;
+color: #fff;
+margin:0 2rem ;
+`;
 const BodyWrapper = styled.div`& span {
   color: red;
   font-size: 1.3rem;
@@ -185,6 +187,10 @@ const Flex = styled.div`
       ? "space-around"
       : props.evenly
       ? "space-evenly"
+      : props.end
+      ? "flex-end"
+      : props.start
+      ? "flex-start"
       : ""};
   align-items: ${(props) =>
     props.align_center

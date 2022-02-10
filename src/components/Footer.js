@@ -13,7 +13,7 @@ const Container = styled.div`
 const Footer = () => {
   return (
     <Container>
-      <Flex col h_full evenly align_center>
+      <Flex col h_full center  align_center>
         <Flex row around half>
           <a href="https://github.com/Safwa9amar">
             <AiFillGithub />
