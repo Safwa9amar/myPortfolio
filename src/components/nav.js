@@ -194,7 +194,7 @@ const Navbar = (props) => {
         Location.pathname === "/"
           ? ["Front End Developer", "Web designer", "5 Years Experience"]
           : Location.pathname === "/Services"
-          ? ["Speed settings, try diffrent values untill you get good results"]
+          ? ["We provides a full service range including technical skills, design, business understanding."]
           : Location.pathname === "/Projects"
           ? ["Speed settings, try diffrent values untill you get good results"]
           : Location.pathname === "/Blogs"

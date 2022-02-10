@@ -37,7 +37,7 @@ const Div = styled.div`
       flex-flow: row;
 
       .card {
-        flex: 1;
+      flex: 1;
         padding: 0.5rem;
         display: flex;
         justify-content: space-evenly;

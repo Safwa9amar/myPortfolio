@@ -5,6 +5,8 @@ const PropgresSkillsData = function (data) {
   const { ref, inView } = useInView({
     /* Optional options */
     threshold: 0,
+    triggerOnce: true,
+
   });
   return data.map((el) => {
     return (

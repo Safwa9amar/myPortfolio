@@ -73,7 +73,7 @@ const CardBody = styled.div``;
 
 const Card = styled.div`
   position: relative;
-  border-left: 1px solid #ef6c57;
+  border-left: 0.1px dashed #ef6c57;
   padding: 1rem;
   ${Title} {
     text-transform: capitalize;
@@ -96,12 +96,12 @@ const Card = styled.div`
     content: "";
     display: block;
     position: absolute;
-    left: -10px;
+    left: -7px;
     width: 10px;
     height: 10px;
-    border: 5px solid #ef6c57;
+    border: 2px solid #ef6c57;
     border-radius: 50%;
-    box-shadow: inset 0px 0px 0px 20px #ffffff;
+    box-shadow: inset 0px 0px 0px 2px #ffffff, inset 0px 0px 0px 20px #ff5e07;
   }
 
   @keyframes animate {
@@ -114,6 +114,29 @@ const Card = styled.div`
     }
   }
 `;
+const IconsWrapper = styled.div`width: 4rem;
+height: 4rem;
+@media screen and (max-width: 600px) {
+  width: 3rem;
+  height: 3rem;
+}
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 100%;
+background: #ef6c57;
+font-size: 2rem;
+color: #fff;`;
+const BodyWrapper = styled.div`& span {
+  color: red;
+  font-size: 1.3rem;
+  font-weight: bold;
+  @media screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+}`;
+// =============================================================================================
+// =============================================================================================
 const ProgressWidth = (w) => keyframes`
 from {
       width: 0;
@@ -228,4 +251,6 @@ export {
   Progress,
   Flex,
   TextWithBg,
+  IconsWrapper,
+  BodyWrapper,
 };

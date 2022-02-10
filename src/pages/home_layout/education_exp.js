@@ -14,7 +14,7 @@ const Div = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 2rem;
- 
+
   .edu_exp {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -50,7 +50,9 @@ const EduExp = () => {
 let Education = (data) => {
   const { ref, inView } = useInView({
     /* Optional options */
-    threshold: 0,
+    // threshold: 1,
+    rootMargin:'-200px',
+    triggerOnce: true,
   });
   return data.map((el) => {
     return (
