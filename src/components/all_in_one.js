@@ -179,26 +179,26 @@ const Flex = styled.div`
     ${(props) => (props.wrap ? "wrap" : props.nowrap ? "nowrap" : "")};
   justify-content: ${(props) =>
     props.center
-      ? `center ${props.important ? "!important" : ""}`
+      ? `center`
       : props.between
-      ? `space-between ${props.important ? "!important" : ""}`
+      ? `space-between`
       : props.around
-      ? `space-around ${props.important ? "!important" : ""}`
+      ? `space-around`
       : props.evenly
-      ? `space-evenly ${props.important ? "!important" : ""}`
+      ? `space-evenly`
       : props.end
-      ? `flex-end ${props.important ? "!important" : ""}`
+      ? `flex-end`
       : props.start
-      ? `flex-start ${props.important ? "!important" : ""}`
+      ? `flex-start`
       : ""};
   align-items: ${(props) =>
     props.align_center
-      ? `center ${props.important ? "!important" : ""}`
+      ? `center`
       : props.align_base
-      ? `baseline ${props.important ? "!important" : ""}`
+      ? `baseline`
       : props.align_end
-      ? `flex-end ${props.important ? "!important" : ""}`
-      : `flex-start ${props.important ? "!important" : ""}`};
+      ? `flex-end`
+      : `flex-start`};
   margin: ${(props) => props.margin};
   width: ${(props) => (props.full ? "100%" : props.half ? "50%" : props.w)};
   height: ${(props) =>
@@ -206,8 +206,8 @@ const Flex = styled.div`
   @media screen and (max-width: 600px) {
     width: 100%;
     flex-flow: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center ;
+    align-items: center ;
   }
 `;
 

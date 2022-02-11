@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { H5, H4, TextSmall} from "../components/all_in_one";
+import { H5, H4, TextSmall } from "../components/all_in_one";
 import { Flex, IconsWrapper } from "../components/all_in_one";
 import { MdDesignServices } from "react-icons/md";
 import { BsCodeSlash } from "react-icons/bs";
@@ -8,16 +8,32 @@ import images from "../components/images";
 
 const Img = styled.img``;
 const ImgWrapper = styled.div``;
-
+const CardWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  ${IconsWrapper} {
+    flex: 1;
+    background: transparent !important;
+    color: #1d1d1d;
+  }
+  & ${H5} {
+    flex: 1;
+    color: green;
+  }
+`;
 const Card = ({ header, icon }) => {
   return (
-    <Flex important evenly align_center >
+    <CardWrapper>
       <IconsWrapper>{icon}</IconsWrapper>
       <H5>{header}</H5>
-    </Flex>
+    </CardWrapper>
   );
 };
 const Section = styled.section`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +41,7 @@ const Section = styled.section`
   padding: 1rem;
   @media screen and (max-width: 600px) {
     padding: 0;
+    margin: 0;
   }
 
   ${Flex} {
@@ -41,13 +58,8 @@ const Section = styled.section`
         @media screen and (max-width: 600px) {
           padding: 0;
         }
-      }
-      & ${H4} {
-        margin-left: 2rem;
-        @media screen and (max-width: 600px) {
-          padding: 0;
+        ${H4} {
           width: 100%;
-          margin: 0;
         }
       }
     }
@@ -64,11 +76,11 @@ const Section = styled.section`
 const Layout = () => {
   return (
     <>
-      <Section>
+      <Flex center>
         <Card header="Design" icon={<MdDesignServices />} />
         <Card header="Development" icon={<BsCodeSlash />} />
         <Card header="Consulting" icon={<FaHandsHelping />} />
-      </Section>
+      </Flex>
 
       <Section>
         <Flex align_center>
@@ -97,12 +109,12 @@ const Layout = () => {
           <ImgWrapper>
             <Img src={images[1]} alt="img" />
           </ImgWrapper>
-          <div>
-            <H4>
-              Digital agency is a business you hire to outsource your digital
-              marketing efforts
-            </H4>
+          <article>
             <TextSmall>
+              <H4>
+                Digital agency is a business you hire to outsource your digital
+                marketing efforts
+              </H4>
               Ability to put themselves in the merchant's shoes. It is meant to
               partner on the long run, and work as an extension of the
               merchant's team. A digital agency is a business you hire to
@@ -110,7 +122,7 @@ const Layout = () => {
               in-house. They can provide your business with a variety of digital
               solutions to promote your product or service online and help you.
             </TextSmall>
-          </div>
+          </article>
         </Flex>
       </Section>
     </>
