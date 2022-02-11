@@ -114,7 +114,7 @@ const About = styled.div`
       font-size: 3.5rem;
     }
     p {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -138,7 +138,7 @@ const Contact = styled.div`
   border-radius: 0.1rem;
   @media screen and (max-width: 600px) {
     position: absolute;
-    bottom: 15%;
+    bottom: 5%;
     left: 50%;
     transform: translate(-50%, -15%);
   }

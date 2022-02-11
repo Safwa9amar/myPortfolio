@@ -43,7 +43,7 @@ const Form = styled.form`
     }
   }
   @media screen and (max-width: 600px) {
-    width: auto;
+    width: 100%;
   }
 `;
 

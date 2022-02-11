@@ -114,29 +114,28 @@ const Card = styled.div`
     }
   }
 `;
-const IconsWrapper = styled.div`width: 4rem;
-height: 4rem;
-@media screen and (max-width: 600px) {
+const IconsWrapper = styled.div`
   width: 3rem;
   height: 3rem;
-}
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 50%;
-background: #ef6c57;
-font-size: 2rem;
-color: #fff;
-margin:0 2rem ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #2b2a2a;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 2rem;
 `;
-const BodyWrapper = styled.div`& span {
-  color: red;
-  font-size: 1.3rem;
-  font-weight: bold;
-  @media screen and (max-width: 600px) {
-    font-size: 1rem;
+const BodyWrapper = styled.div`
+  & span {
+    color: red;
+    font-size: 1.3rem;
+    font-weight: bold;
+    @media screen and (max-width: 600px) {
+      font-size: 1rem;
+    }
   }
-}`;
+`;
 // =============================================================================================
 // =============================================================================================
 const ProgressWidth = (w) => keyframes`
@@ -180,26 +179,26 @@ const Flex = styled.div`
     ${(props) => (props.wrap ? "wrap" : props.nowrap ? "nowrap" : "")};
   justify-content: ${(props) =>
     props.center
-      ? "center"
+      ? `center ${props.important ? "!important" : ""}`
       : props.between
-      ? "space-between"
+      ? `space-between ${props.important ? "!important" : ""}`
       : props.around
-      ? "space-around"
+      ? `space-around ${props.important ? "!important" : ""}`
       : props.evenly
-      ? "space-evenly"
+      ? `space-evenly ${props.important ? "!important" : ""}`
       : props.end
-      ? "flex-end"
+      ? `flex-end ${props.important ? "!important" : ""}`
       : props.start
-      ? "flex-start"
+      ? `flex-start ${props.important ? "!important" : ""}`
       : ""};
   align-items: ${(props) =>
     props.align_center
-      ? "center"
+      ? `center ${props.important ? "!important" : ""}`
       : props.align_base
-      ? "baseline"
+      ? `baseline ${props.important ? "!important" : ""}`
       : props.align_end
-      ? "flex-end"
-      : "flex-start"};
+      ? `flex-end ${props.important ? "!important" : ""}`
+      : `flex-start ${props.important ? "!important" : ""}`};
   margin: ${(props) => props.margin};
   width: ${(props) => (props.full ? "100%" : props.half ? "50%" : props.w)};
   height: ${(props) =>

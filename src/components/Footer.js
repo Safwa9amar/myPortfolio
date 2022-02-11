@@ -13,8 +13,8 @@ const Container = styled.div`
 const Footer = () => {
   return (
     <Container>
-      <Flex col h_full center  align_center>
-        <Flex row around half>
+      <Flex  h_full center  align_center  >
+        <Flex row around half >
           <a href="https://github.com/Safwa9amar">
             <AiFillGithub />
           </a>
@@ -25,8 +25,8 @@ const Footer = () => {
             <AiFillMail />
           </a>
         </Flex>
-        <p>Privacy | Terms | FAQs | Help </p>
-        <p> © Domain Name. All Rights Reserved. Designed by H.safwan</p>
+        {/* <p>Privacy | Terms | FAQs | Help </p>
+        <p> © Domain Name. All Rights Reserved. Designed by H.safwan</p> */}
       </Flex>
     </Container>
   );
