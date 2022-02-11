@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { H5, H4, TextSmall, H1 } from "../components/all_in_one";
+import { H5, H4, TextSmall} from "../components/all_in_one";
 import { Flex, IconsWrapper } from "../components/all_in_one";
 import { MdDesignServices } from "react-icons/md";
 import { BsCodeSlash } from "react-icons/bs";
