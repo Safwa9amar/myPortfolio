@@ -10,7 +10,7 @@ import { MdOutlineDesignServices } from "react-icons/md";
 import { ImBlog } from "react-icons/im";
 const Nav = styled.div`
   display: flex;
-  flex-flow: column;
+  flex-flow: column ;
   width: 100%;
   &.Nav {
     background-color: #28293e;
@@ -21,7 +21,7 @@ const Nav = styled.div`
     &.Nav {
       & ul {
         position: fixed;
-        flex-flow: column;
+        flex-flow: column ;
         justify-content: center;
         align-items: flex-start;
         z-index: 111;
@@ -51,7 +51,7 @@ const FlexRow = styled.div`
   }
   ul {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: space-evenly;
   }
   & li {
