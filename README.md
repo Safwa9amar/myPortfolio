@@ -1,1 +1,1 @@
-Open [https://safwan-portfolio.netlify.app/](visite) to view it in your browser.
+[enter link description here](https://safwan-portfolio.netlify.app/)
