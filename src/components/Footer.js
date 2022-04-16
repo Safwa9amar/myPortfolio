@@ -35,7 +35,7 @@ const Footer = () => {
         </ul>
       </div>
       <div class="footer-bottom">
-        <p><a href="#">H.safwan</a>  </p>
+        <p>H.safwan</p>
         <div class="footer-menu">
           <ul class="f-menu">
             <li>
