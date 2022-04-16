@@ -1,7 +1,7 @@
 const data = [
   {
-    img: "https://media.gcflearnfree.org/content/5e31ca08bc7eff08e4063776_01_29_2020/ProgrammingIllustration.png  ",
-    header: "KeyBoard",
+    img: "https://www.goodcore.co.uk/blog/wp-content/webp-express/webp-images/uploads/2019/08/coding-vs-programming-2.jpg.webp",
+    header: "Marketing channels native advertising",
     tag: "design",
   },
   {
@@ -11,23 +11,23 @@ const data = [
   },
   {
     img: "https://i.ytimg.com/vi/kX0tq3qsY_U/maxresdefault.jpg",
-    header: "Work Media",
+    header: "The most well known performance",
     tag: "Illustration",
   },
   {
     img: "https://www.datocms-assets.com/14946/1632993815-which-programming-language-should-i-learn-and-why-1080x675-edited.png?auto=format&w=1080",
-    header: "Handp",
+    header: "Your business with a variety of digital",
     tag: "Branding",
   },
   {
     img: "https://stackify.com/wp-content/uploads/2017/12/Featured-881x441.jpg",
-    header: "Handp",
-    tag: "Branding",
+    header: "Outsource your digital marketing efforts",
+    tag: "design",
   },
   {
     img: "https://kinsta.com/wp-content/uploads/2021/03/best-programming-language-to-learn.png",
-    header: "Handp",
-    tag: "Branding",
+    header: "Agency is a business you hire to outsource",
+    tag: "Stories",
   },
 ];
 
@@ -59,19 +59,18 @@ const Tabs = function () {
 };
 const Board = function (props) {
   return (
-    <div className={`${props.tailcss}`}>
-      <div className="relative h-full w-full p-4 ">
-        <img
-          className="h-full w-full rounded-xl saturate-50 brightness-75"
-          src={props.img}
-          alt="card"
-        />
-        <div className="absolute  bottom-2.5 left-10 m-4 prose md:prose-sm xl:prose-lg sm:prose-xs">
-          <div className="rounded-xl bg-white text-center   text-gray-600 w-fit px-4">
-            {props.tag}
-          </div>
-          <h1 className="my-3 text-white font-bold ">{props.header}</h1>
-        </div>
+    <div
+      className={`md:w-1/2 lg:w-1/3 sm:w-full flex flex-col justify-between gap-2 p-3 font-sans`}
+    >
+      <img
+        className="rounded  brightness-100 shadow-xl"
+        src={props.img}
+        alt="card"
+      />
+      <div className="prose md:prose-sm xl:prose-md sm:prose-xs">
+        {props.tag}
+        <h2 className="text-black font-bold ">{props.header}</h2>
+        <p>29 Oct, 2021</p>
       </div>
     </div>
   );
@@ -87,24 +86,13 @@ const Projects = () => {
   return (
     <div className="md:m-24 flex flex-col ">
       <Tabs />
-      <Board
-        tag="love"
-        img={
-          "https://www.goodcore.co.uk/blog/wp-content/webp-express/webp-images/uploads/2019/08/coding-vs-programming-2.jpg.webp"
-        }
-        header="recent project"
-      />
       <BoardContainer>
         {data.map((el) => {
           return (
-            <Board
-              img={el.img}
-              header={el.header}
-              tag={el.tag}
-              tailcss={"md:w-1/2 lg:w-1/3 sm:w-full "}
-            />
+            <Board img={el.img} header={el.header} tag={el.tag} tailcss={""} />
           );
         })}
+        <button className="bg-white px-4 my-2 rounded-md">load more</button>
       </BoardContainer>
     </div>
   );
