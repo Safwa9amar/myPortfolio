@@ -87,15 +87,19 @@ const FlexRow = styled.div`
       left: -100%;
     }
 
-    &:hover {
+    &:hover ,&:focus {
       box-shadow: 1px 20px 17px 0px #eeeeee30;
       background: inherit;
+      outline: none;
       ::after {
         content: "";
         width: 100%;
         height: 1px;
         left: 0;
+       
+       
       }
+      
     }
   }
 `;

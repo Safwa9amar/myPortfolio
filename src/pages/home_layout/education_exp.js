@@ -49,14 +49,11 @@ const EduExp = () => {
 
 let Education = (data) => {
   const { ref, inView } = useInView({
-    /* Optional options */
-    // threshold: 1,
-    rootMargin:'-200px',
     triggerOnce: true,
   });
   return data.map((el) => {
     return (
-      <Card ref={ref} activeView={inView}>
+      <Card ref={ref} key={el.year} activeView={inView}>
         <Title>{el.name}</Title>
         <SubTitle>
           {el.institute} | {el.year}
