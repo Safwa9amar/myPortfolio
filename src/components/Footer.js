@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { AiFillGithub, AiFillFacebook, AiFillMail } from "react-icons/ai";
 import "./footer.css";
-import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 35vh;
