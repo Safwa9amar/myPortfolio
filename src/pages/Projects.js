@@ -1,4 +1,3 @@
-
 const data = [
   {
     img: "https://via.placeholder.com/360x370",
@@ -22,23 +21,30 @@ const data = [
   },
 ];
 
-
 const Tabs = function () {
   return (
-    <div className="flex flex-wrap justify-center gap-10 m-4 text-gray-500">
-      <button>
-        Show all <sup>12</sup>
-      </button>
-      <button>
-        Show all <sup>4</sup>
-      </button>
-      <button>
-        Show all <sup>6</sup>
-      </button>
-      <button>
-        Show all <sup>2</sup>
-      </button>
-    </div>
+    <>
+      <div className="hidden flex-wrap justify-center gap-10 m-4 text-gray-500 sm:hidden  md:flex">
+        <button>
+          Show all <sup>12</sup>
+        </button>
+        <button>
+          Show all <sup>4</sup>
+        </button>
+        <button>
+          Show all <sup>6</sup>
+        </button>
+        <button>
+          Show all <sup>2</sup>
+        </button>
+      </div>
+      <select className="md:hidden sm:inline m-4 p-4 border-2">
+        <option value="">Show all</option>
+        <option value="">design</option>
+        <option value="">markating</option>
+        <option value="">web dev</option>
+      </select>
+    </>
   );
 };
 const Board = function (props) {
@@ -65,7 +71,7 @@ const BoardContainer = function (props) {
 };
 const Projects = () => {
   return (
-    <div className="md:m-16 flex flex-col ">
+    <div className="md:m-16 flex flex-col">
       <Tabs />
       <Board
         tag="love"
