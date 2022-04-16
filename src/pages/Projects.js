@@ -43,7 +43,7 @@ const Tabs = function () {
 };
 const Board = function (props) {
   return (
-    <div className={props.style}>
+    <div className={props.tailcss}>
       <div className="relative p-4 h-full w-full">
         <img className="h-full w-full" src={props.img} alt="card" />
         <div className="absolute  bottom-2.5 left-10 m-4 xl:text-xl 2xl:text-2xl md:text-base sm:text-xs">
@@ -79,7 +79,7 @@ const Projects = () => {
               img={el.img}
               header={el.header}
               tag={el.tag}
-              style="md:w-1/2 sm:w-full "
+              tailcss={"md:w-1/2 sm:w-full "}
             />
           );
         })}
