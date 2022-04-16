@@ -23,7 +23,6 @@ const data = [
   },
 ];
 
-const CardContainer = styled.div``;
 
 const Tabs = function () {
   return (
