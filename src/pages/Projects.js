@@ -58,14 +58,14 @@ const Board = function (props) {
 };
 const BoardContainer = function (props) {
   return (
-    <div className="w-full flex flex-wrap items-stretch  lg:flex-row md:flex-row ">
+    <div className="w-full flex flex-wrap justify-center items-stretch  lg:flex-row md:flex-row ">
       {props.children}
     </div>
   );
 };
 const Projects = () => {
   return (
-    <div className="m-16 flex flex-col ">
+    <div className="md:m-16 flex flex-col ">
       <Tabs />
       <Board
         tag="love"

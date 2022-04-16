@@ -142,7 +142,7 @@ const Contact = styled.div`
   border-radius: 0.1rem;
   @media screen and (max-width: 600px) {
     position: absolute;
-    bottom: 5%;
+    bottom: 25%;
     left: 50%;
     transform: translate(-50%, -15%);
   }
