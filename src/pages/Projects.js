@@ -1,22 +1,32 @@
 const data = [
   {
-    img: "https://via.placeholder.com/360x370",
-    header: "hello world !",
+    img: "https://media.gcflearnfree.org/content/5e31ca08bc7eff08e4063776_01_29_2020/ProgrammingIllustration.png  ",
+    header: "KeyBoard",
     tag: "design",
   },
   {
-    img: "https://via.placeholder.com/720x360",
-    header: "hello again !",
+    img: "https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/getty_1075599562_hpy86b.jpg",
+    header: "Sofa",
     tag: "markating",
   },
   {
-    img: "https://via.placeholder.com/720x360",
-    header: "hello again !",
+    img: "https://i.ytimg.com/vi/kX0tq3qsY_U/maxresdefault.jpg",
+    header: "Work Media",
     tag: "Illustration",
   },
   {
-    img: "https://via.placeholder.com/720x360",
-    header: "hello again !",
+    img: "https://www.datocms-assets.com/14946/1632993815-which-programming-language-should-i-learn-and-why-1080x675-edited.png?auto=format&w=1080",
+    header: "Handp",
+    tag: "Branding",
+  },
+  {
+    img: "https://stackify.com/wp-content/uploads/2017/12/Featured-881x441.jpg",
+    header: "Handp",
+    tag: "Branding",
+  },
+  {
+    img: "https://kinsta.com/wp-content/uploads/2021/03/best-programming-language-to-learn.png",
+    header: "Handp",
     tag: "Branding",
   },
 ];
@@ -49,14 +59,18 @@ const Tabs = function () {
 };
 const Board = function (props) {
   return (
-    <div className={props.tailcss}>
-      <div className="relative p-4 h-full w-full">
-        <img className="h-full w-full" src={props.img} alt="card" />
-        <div className="absolute  bottom-2.5 left-10 m-4 xl:text-xl 2xl:text-2xl md:text-base sm:text-xs">
-          <div className="rounded-xl bg-white text-center font-semibold  text-gray-600 ">
+    <div className={`${props.tailcss}`}>
+      <div className="relative h-full w-full p-4 ">
+        <img
+          className="h-full w-full rounded-xl saturate-50 brightness-75"
+          src={props.img}
+          alt="card"
+        />
+        <div className="absolute  bottom-2.5 left-10 m-4 prose md:prose-sm xl:prose-lg sm:prose-xs">
+          <div className="rounded-xl bg-white text-center   text-gray-600 w-fit px-4">
             {props.tag}
           </div>
-          <h1 className="my-3 text-white font-bold">{props.header}</h1>
+          <h1 className="my-3 text-white font-bold ">{props.header}</h1>
         </div>
       </div>
     </div>
@@ -64,18 +78,20 @@ const Board = function (props) {
 };
 const BoardContainer = function (props) {
   return (
-    <div className="w-full flex flex-wrap justify-center items-stretch  lg:flex-row md:flex-row ">
+    <div className="w-full flex flex-wrap justify-center items-stretch lg:flex-row md:flex-row ">
       {props.children}
     </div>
   );
 };
 const Projects = () => {
   return (
-    <div className="md:m-16 flex flex-col">
+    <div className="md:m-24 flex flex-col ">
       <Tabs />
       <Board
         tag="love"
-        img={"https://via.placeholder.com/720x360"}
+        img={
+          "https://www.goodcore.co.uk/blog/wp-content/webp-express/webp-images/uploads/2019/08/coding-vs-programming-2.jpg.webp"
+        }
         header="recent project"
       />
       <BoardContainer>
@@ -85,7 +101,7 @@ const Projects = () => {
               img={el.img}
               header={el.header}
               tag={el.tag}
-              tailcss={"md:w-1/2 sm:w-full "}
+              tailcss={"md:w-1/2 lg:w-1/3 sm:w-full "}
             />
           );
         })}
