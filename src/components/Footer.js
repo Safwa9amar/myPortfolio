@@ -3,8 +3,8 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <div class="footer-content">
-      <ul class="socials">
+    <div className="footer-content">
+      <ul className="socials">
         <li>
           <a href="https://github.com/Safwa9amar">
             <AiFillGithub />

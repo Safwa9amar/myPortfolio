@@ -1,33 +1,53 @@
+import img from "../components/img/project/1.jpg";
+import img1 from "../components/img/project/2.jpg";
+import img2 from "../components/img/project/3.jpg";
+import img3 from "../components/img/project/4.jpg";
+import img4 from "../components/img/project/5.jpg";
+import img5 from "../components/img/project/6.jpg";
+import img7 from "../components/img/project/8.png";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 const data = [
   {
-    img: "https://www.goodcore.co.uk/blog/wp-content/webp-express/webp-images/uploads/2019/08/coding-vs-programming-2.jpg.webp",
-    header: "Marketing channels native advertising",
+    img: img,
+    header: "KeyBoard",
     tag: "design",
+    description: "using this web allo to generate random data from api",
   },
   {
-    img: "https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/getty_1075599562_hpy86b.jpg",
+    img: img1,
+
+    // img: "https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/getty_1075599562_hpy86b.jpg",
     header: "Sofa",
     tag: "markating",
   },
   {
-    img: "https://i.ytimg.com/vi/kX0tq3qsY_U/maxresdefault.jpg",
-    header: "The most well known performance",
+    img: img2,
+
+    // img: "https://i.ytimg.com/vi/kX0tq3qsY_U/maxresdefault.jpg",
+    header: "Work Media",
     tag: "Illustration",
   },
   {
-    img: "https://www.datocms-assets.com/14946/1632993815-which-programming-language-should-i-learn-and-why-1080x675-edited.png?auto=format&w=1080",
-    header: "Your business with a variety of digital",
+    img: img3,
+
+    // img: "https://www.datocms-assets.com/14946/1632993815-which-programming-language-should-i-learn-and-why-1080x675-edited.png?auto=format&w=1080",
+    header: "Handp",
     tag: "Branding",
   },
   {
-    img: "https://stackify.com/wp-content/uploads/2017/12/Featured-881x441.jpg",
-    header: "Outsource your digital marketing efforts",
-    tag: "design",
+    img: img4,
+
+    // img: "https://stackify.com/wp-content/uploads/2017/12/Featured-881x441.jpg",
+    header: "Handp",
+    tag: "Branding",
   },
   {
-    img: "https://kinsta.com/wp-content/uploads/2021/03/best-programming-language-to-learn.png",
-    header: "Agency is a business you hire to outsource",
-    tag: "Stories",
+    img: img5,
+
+    // img: "https://kinsta.com/wp-content/uploads/2021/03/best-programming-language-to-learn.png",
+    header: "Handp",
+    tag: "Branding",
   },
 ];
 
@@ -59,20 +79,22 @@ const Tabs = function () {
 };
 const Board = function (props) {
   return (
-    <div
-      className={`md:w-1/2 lg:w-1/3 sm:w-full flex flex-col justify-between gap-2 p-3 font-sans`}
+    <motion.div
+      whileHover={{ scale: 1.05, zIndex: 111, cursor: "pointer" }}
+      className={`${props.tailcss} overflow-hidden relative p-2`}
     >
       <img
-        className="rounded  brightness-100 shadow-xl"
+        className="rounded-md h-full w-full brightness-75"
         src={props.img}
         alt="card"
       />
-      <div className="prose md:prose-sm xl:prose-md sm:prose-xs">
-        {props.tag}
-        <h2 className="text-black font-bold ">{props.header}</h2>
-        <p>29 Oct, 2021</p>
+      <div className="absolute prose md:prose-sm xl:prose-md sm:prose-xs bottom-0 left-0 m-6">
+        <h1 className="text-white">{props.header}</h1>
+        <div className="rounded-xl bg-white text-center text-gray-600 w-fit px-4">
+          {props.tag}
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 const BoardContainer = function (props) {
@@ -89,10 +111,16 @@ const Projects = () => {
       <BoardContainer>
         {data.map((el) => {
           return (
-            <Board img={el.img} header={el.header} tag={el.tag} tailcss={""} />
+            <Board
+              img={el.img}
+              header={el.header}
+              tag={el.tag}
+              tailcss={"md:w-1/2 lg:w-1/3 sm:w-full "}
+              description={el.description}
+            />
           );
         })}
-        <button className="bg-white px-4 my-2 rounded-md">load more</button>
+        <button className="bg-white px-2 mx-2 rounded-md">load more</button>
       </BoardContainer>
     </div>
   );
