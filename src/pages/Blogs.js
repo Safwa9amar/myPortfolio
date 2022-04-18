@@ -20,7 +20,6 @@ const H1 = styled.div`
 `;
 
 function Artice() {
-  const scrollRef = useRef(null);
 
   return (
     <motion.div
