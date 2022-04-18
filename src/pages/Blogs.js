@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { motion } from "framer-motion";
 import arr from "../components/images";
 let data = [
@@ -32,7 +31,6 @@ let data = [
   },
 ];
 
-
 function Article(props) {
   return (
     <motion.div
@@ -55,7 +53,7 @@ function Article(props) {
       <div className="flex-[3]">
         <header>
           <a href="/2022-04/stop-using-bang-operator">
-            <h1 className="xl:text-xl md:text-lg sm:text-sm font-bold border-b-2 border-b-transparent  text-slate-800 hover:border-b-2 hover:border-b-orange-500 w-fit">
+            <h1 className="xl:text-xl md:text-lg sm:text-sm font-bold border-b-2 border-b-transparent transition-all duration-300  text-slate-800 hover:border-b-2 hover:border-b-orange-500 w-fit">
               {props.header}
             </h1>
           </a>
@@ -68,8 +66,8 @@ function Article(props) {
           {props.text}
         </p>
         <a
-          className="text-blue-500 hover:border-b-2 hover:border-b-red-500 w-fit border-2 border-transparent "
-          href="/2022-04/stop-using-bang-operator"
+          className="text-blue-500 hover:border-b-2  transition-all duration-300 hover:border-b-red-500 w-fit border-2 border-transparent "
+          href="/2022-04/stop-using-bang-operator "
         >
           Read more
         </a>
