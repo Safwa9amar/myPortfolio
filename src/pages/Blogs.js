@@ -37,7 +37,7 @@ function Article(props) {
       className="w-full m-3 flex gap-4 justify-between p-2 xl:text-1xl md:text-xl sm:text-sm xs:text-xs "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ delay: 1 }}
+      transition={{ delay: .300 }}
       viewport={{ once: true }}
     >
       <div
