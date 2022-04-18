@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 const H1 = styled.div`
   text-align: left;
   text-underline-offset: 0.08em;
@@ -29,7 +28,7 @@ function Artice() {
       transition={{ delay: 1 }}
       viewport={{ once: true }}
     >
-      <div className="md:hidden sm:hidden lg:block lg:visible w-full rounded-xl border-2 bg-[url('https://www.getbidbar.com/assets/blog/programming_topics.jpg')] bg-cover"></div>
+      <div className="md:hidden xs:hidden sm:hidden lg:block lg:visible w-full rounded-xl border-2 bg-[url('https://www.getbidbar.com/assets/blog/programming_topics.jpg')] bg-cover"></div>
       <div>
         <header>
           <a href="/2022-04/stop-using-bang-operator">

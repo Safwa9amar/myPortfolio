@@ -4,6 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    screens: {
+      'xs': '320',
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),
