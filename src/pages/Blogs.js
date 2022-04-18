@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
+import { useRef } from "react";
 const H1 = styled.div`
   text-align: left;
   text-underline-offset: 0.08em;
@@ -17,15 +18,19 @@ const H1 = styled.div`
     border-bottom: 2px solid #ff460e;
   }
 `;
-const ArticleWrapper = styled.div`
-  line-height: 1.625;
-  box-sizing: border-box;
-`;
 
 function Artice() {
+  const scrollRef = useRef(null);
+
   return (
-    <ArticleWrapper className="w-full m-3 flex flex-row gap-2 justify-between p-2 xl:text-1xl md:text-xl sm:text-sm xs:text-xs ">
-      <div className="md:hidden lg:block lg:visible w-full rounded-xl border-2 bg-[url('https://www.getbidbar.com/assets/blog/programming_topics.jpg')] bg-cover"></div>
+    <motion.div
+      className="w-full m-3 flex flex-row gap-2 justify-between p-2 xl:text-1xl md:text-xl sm:text-sm xs:text-xs "
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 1 }}
+      viewport={{ once: true }}
+    >
+      <div className="md:hidden sm:hidden lg:block lg:visible w-full rounded-xl border-2 bg-[url('https://www.getbidbar.com/assets/blog/programming_topics.jpg')] bg-cover"></div>
       <div>
         <header>
           <a href="/2022-04/stop-using-bang-operator">
@@ -47,14 +52,14 @@ function Artice() {
           Read more
         </a>
       </div>
-    </ArticleWrapper>
+    </motion.div>
   );
 }
 
 function Search() {
   return (
     <form className="flex flex-col ">
-      <label for="search" className="mx-4">
+      <label htmlFor="search" className="mx-4">
         Search
       </label>
       <input
