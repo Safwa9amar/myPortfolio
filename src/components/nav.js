@@ -193,7 +193,7 @@ const Navbar = (props) => {
 
   const el = useRef(null);
   const blog = useContext(BlogContext).filter(
-    (blog) => blog.id === Location.search.replace("?id=", "")
+    (blog) => blog.id === Math.floor(Location.search.replace("?id=", ""))
   )[0];
 
   useEffect(() => {

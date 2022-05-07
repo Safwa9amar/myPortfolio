@@ -4,7 +4,7 @@ export const BlogContext = createContext();
 
 
 const BlogsContextProvider = (props) => {
-  const [blogs, setBlogs] = useState([
+  const [blogs] = useState([
     {
       id : 1,
       header: "How To Use CSS Layers",
