@@ -96,6 +96,7 @@ export default function Blogs() {
               text={articles.text}
               img={articles.img}
               id={articles.id}
+              key={articles.id}
             />
           ))}
         </div>
