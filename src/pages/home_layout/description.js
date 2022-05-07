@@ -174,10 +174,7 @@ const Personal = (data) => {
         <strong>Name : </strong>
         {data.Name}
       </p>
-      <p>
-        <strong>birthday : </strong>
-        {data.birthday}
-      </p>
+   
       <p>
         <strong>Degree : </strong>
         {data.Degree}
