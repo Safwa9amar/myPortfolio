@@ -16,7 +16,7 @@ const Nav = styled.div`
   width: 100%;
   &.Nav {
     background-color: #28293e;
-    height: 50vh;
+    height: 45vh;
     position: relative;
   }
   @media screen and (max-width: 600px) {
@@ -111,16 +111,6 @@ const About = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  @media screen and (max-width: 600px) {
-    top: 35%;
-    transform: translate(-50%, -35%);
-    h1 {
-      font-size: 3.5rem;
-    }
-    p {
-      font-size: 1rem;
-    }
-  }
 `;
 const Logo = styled.div`
   color: red;
@@ -141,6 +131,7 @@ const Contact = styled.div`
   border: 1px solid #eee;
   border-radius: 0.1rem;
   @media screen and (max-width: 600px) {
+    display: none;
     position: absolute;
     bottom: 25%;
     left: 50%;
@@ -203,16 +194,16 @@ const Navbar = (props) => {
           ? ["Front End Developer", "Web designer", "5 Years Experience"]
           : Location.pathname === "/Services"
           ? [
-              "We provides a full service range including technical skills, design, business understanding.",
+              "We provides a full service range including technical skills, design, web development.",
             ]
           : Location.pathname === "/Projects"
-          ? ["Speed settings, try diffrent values untill you get good results"]
+          ? ["Here you will find our projects and works , Note: This section is under development"]
           : Location.pathname === "/Blogs"
-          ? ["Speed settings, try diffrent values untill you get good results"]
+          ? ["we publish our latest topics in several scopes, including helping to find technical solutions , web development and design , software solutions...etc"]
           : Location.pathname === "/Blogs/post"
-          ? [blog.text]
+          ? [`${blog.text}`]
           : Location.pathname === "/Contact"
-          ? ["Speed settings, try diffrent values untill you get good results"]
+          ? ["Welcome to the contact page, we are here to provide any assistance or any solutions"]
           : "", // Strings to display
 
       // Speed settings, try diffrent values untill you get good results
@@ -226,7 +217,7 @@ const Navbar = (props) => {
     return () => {
       typed.destroy();
     };
-  });
+  },[Location.pathname]);
   return (
     <Nav className="Nav" active={active}>
       <FlexRow className="nav_list">

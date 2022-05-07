@@ -5,8 +5,8 @@ const Form = styled.form`
   width: 50%;
   & input {
     display: block;
-    padding: 1rem;
-    border-radius: 30px;
+    padding: .71rem;
+    border-radius: 10px;
     border: 0.1rem solid #eee;
     margin: 0.51rem;
     outline: none;

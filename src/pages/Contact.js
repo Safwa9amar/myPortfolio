@@ -1,8 +1,9 @@
+import ContactForm from "./home_layout/contact";
 
 const Contact = () => {
   return (
-    <div className={`border-2 overflow-hidden relative `}>
-      Contact
+    <div className={`m-6  overflow-hidden relative flex justify-center align-middle`}>
+      <ContactForm></ContactForm>
     </div>
   );
 };
