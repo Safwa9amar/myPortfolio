@@ -54,7 +54,7 @@ const Home = () => {
           <H1>CONTACT</H1>
           <H2>CONTACT ME</H2>
         </TextWithBg>
-        <ContactForm></ContactForm>
+        <ContactForm ></ContactForm>
       </section>
     </HomeWrapper>
   );

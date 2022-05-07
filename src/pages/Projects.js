@@ -7,49 +7,39 @@ import img5 from "../components/img/project/6.jpg";
 import { motion } from "framer-motion";
 const data = [
   {
-    id:1,
+    id: 1,
     img: img,
     header: "KeyBoard",
     tag: "design",
     description: "using this web allo to generate random data from api",
   },
   {
-    id:2,
+    id: 2,
     img: img1,
-
-    // img: "https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/getty_1075599562_hpy86b.jpg",
     header: "Sofa",
     tag: "markating",
   },
   {
-    id:3,
+    id: 3,
     img: img2,
-
-    // img: "https://i.ytimg.com/vi/kX0tq3qsY_U/maxresdefault.jpg",
     header: "Work Media",
     tag: "Illustration",
   },
   {
-    id:4,
+    id: 4,
     img: img3,
-
-    // img: "https://www.datocms-assets.com/14946/1632993815-which-programming-language-should-i-learn-and-why-1080x675-edited.png?auto=format&w=1080",
     header: "Handp",
     tag: "Branding",
   },
   {
-    id:5,
+    id: 5,
     img: img4,
-
-    // img: "https://stackify.com/wp-content/uploads/2017/12/Featured-881x441.jpg",
     header: "Handp",
     tag: "Branding",
   },
   {
-    id:6,
+    id: 6,
     img: img5,
-
-    // img: "https://kinsta.com/wp-content/uploads/2021/03/best-programming-language-to-learn.png",
     header: "Handp",
     tag: "Branding",
   },

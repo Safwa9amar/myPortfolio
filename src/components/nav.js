@@ -122,22 +122,7 @@ const Logo = styled.div`
   }
 `;
 
-const Contact = styled.div`
-  width: 100px;
-  height: 30px;
-  padding: 0.1rem;
-  line-height: 30px;
-  text-align: center;
-  border: 1px solid #eee;
-  border-radius: 0.1rem;
-  @media screen and (max-width: 600px) {
-    display: none;
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    transform: translate(-50%, -15%);
-  }
-`;
+
 const MenuBtn = styled.div`
   display: none;
   @media screen and (max-width: 600px) {
@@ -256,7 +241,7 @@ const Navbar = (props) => {
               Blogs
             </Link>
           </li>
-          <li>
+          <li className="md:!hidden sm:flex">
             <AiFillContacts />
             <Link
               className={Location.pathname === "/Contact" ? "active" : ""}
@@ -266,7 +251,7 @@ const Navbar = (props) => {
             </Link>
           </li>
         </ul>
-        <Contact className="contactBtn">Contact Me</Contact>
+        <Link className="border-[1px] p-1 rounded-md hidden md:block before:!hidden after:!hidden" to="/Contact">Contact Me</Link>
       </FlexRow>
       <About className="About">
         <h2 className="text-white text-2xl lg:text-4xl " color="white">

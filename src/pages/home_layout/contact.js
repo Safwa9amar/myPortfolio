@@ -49,7 +49,7 @@ const Form = styled.form`
 
 const ContactForm = () => {
   return (
-    <Form name="contact-form" method="POST" data-netlify="true">
+    <Form name="contact-form" method="POST" data-netlify="true" id='contact'>
       <Flex col between align_center>
         <Flex row full between align_center>
           <input
@@ -75,7 +75,7 @@ const ContactForm = () => {
             placeholder="Subject"
             required
           />
-          <textarea name="meg" id="msg" cols="30" rows="10" required></textarea>
+          <textarea name="meg" id="msg" cols="30" rows="10" placeholder="message" required></textarea>
         </Flex>
         <button type="submit">Send message</button>
       </Flex>

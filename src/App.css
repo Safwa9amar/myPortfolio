@@ -6,9 +6,9 @@
   /* border:1px dashed; */
 }
 body {
-  background: #FDF0E9;
+  background: #fdf0e9;
 }
-.App{
+.App {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
