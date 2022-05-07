@@ -217,7 +217,7 @@ const Navbar = (props) => {
     return () => {
       typed.destroy();
     };
-  },[Location.pathname]);
+  });
   return (
     <Nav className="Nav" active={active}>
       <FlexRow className="nav_list">
