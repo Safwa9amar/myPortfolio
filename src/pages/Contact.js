@@ -1,7 +1,8 @@
+
 const Contact = () => {
   return (
     <div className={`border-2 overflow-hidden relative `}>
-     Contact
+      Contact
     </div>
   );
 };

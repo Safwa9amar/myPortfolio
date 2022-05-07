@@ -1,6 +1,6 @@
-import { H1, Text } from "./all_in_one";
+import { Text } from "./all_in_one";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
@@ -8,9 +8,11 @@ import Typed from "typed.js";
 import { AiOutlineHome, AiFillProject, AiFillContacts } from "react-icons/ai";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { ImBlog } from "react-icons/im";
+import { BlogContext } from "../context/blogsContext";
+
 const Nav = styled.div`
   display: flex;
-  flex-flow: column ;
+  flex-flow: column;
   width: 100%;
   &.Nav {
     background-color: #28293e;
@@ -21,7 +23,7 @@ const Nav = styled.div`
     &.Nav {
       & ul {
         position: fixed;
-        flex-flow: column ;
+        flex-flow: column;
         justify-content: center;
         align-items: flex-start;
         z-index: 111;
@@ -87,7 +89,8 @@ const FlexRow = styled.div`
       left: -100%;
     }
 
-    &:hover ,&:focus {
+    &:hover,
+    &:focus {
       box-shadow: 1px 20px 17px 0px #eeeeee30;
       background: inherit;
       outline: none;
@@ -96,10 +99,7 @@ const FlexRow = styled.div`
         width: 100%;
         height: 1px;
         left: 0;
-       
-       
       }
-      
     }
   }
 `;
@@ -190,7 +190,11 @@ const MenuBtn = styled.div`
 const Navbar = (props) => {
   const [active, setActive] = useState(false);
   const Location = useLocation();
+
   const el = useRef(null);
+  const blog = useContext(BlogContext).filter(
+    (blog) => blog.id == Location.search.replace("?id=", "")
+  )[0];
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -198,11 +202,15 @@ const Navbar = (props) => {
         Location.pathname === "/"
           ? ["Front End Developer", "Web designer", "5 Years Experience"]
           : Location.pathname === "/Services"
-          ? ["We provides a full service range including technical skills, design, business understanding."]
+          ? [
+              "We provides a full service range including technical skills, design, business understanding.",
+            ]
           : Location.pathname === "/Projects"
           ? ["Speed settings, try diffrent values untill you get good results"]
           : Location.pathname === "/Blogs"
           ? ["Speed settings, try diffrent values untill you get good results"]
+          : Location.pathname === "/Blogs/post"
+          ? [blog.text]
           : Location.pathname === "/Contact"
           ? ["Speed settings, try diffrent values untill you get good results"]
           : "", // Strings to display
@@ -263,14 +271,14 @@ const Navbar = (props) => {
               className={Location.pathname === "/Contact" ? "active" : ""}
               to="/Contact"
             >
-              Contact 
+              Contact
             </Link>
           </li>
         </ul>
         <Contact className="contactBtn">Contact Me</Contact>
       </FlexRow>
       <About className="About">
-        <H1 color="white">
+        <h2 className="text-white text-2xl lg:text-4xl " color="white">
           {Location.pathname === "/"
             ? "About Me"
             : Location.pathname === "/Services"
@@ -279,10 +287,14 @@ const Navbar = (props) => {
             ? "Projects"
             : Location.pathname === "/Blogs"
             ? "Blogs"
+            : Location.pathname === "/Blogs/post"
+            ? blog.header
+            : Location.pathname === "/Blogs/html"
+            ? "html"
             : Location.pathname === "/Contact"
             ? "Contact"
             : ""}
-        </H1>
+        </h2>
         <Text color="white" ref={el}></Text>
       </About>
       <MenuBtn
