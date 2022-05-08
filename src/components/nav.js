@@ -122,7 +122,6 @@ const Logo = styled.div`
   }
 `;
 
-
 const MenuBtn = styled.div`
   display: none;
   @media screen and (max-width: 600px) {
@@ -182,13 +181,19 @@ const Navbar = (props) => {
               "We provides a full service range including technical skills, design, web development.",
             ]
           : Location.pathname === "/Projects"
-          ? ["Here you will find our projects and works , Note: This section is under development"]
+          ? [
+              "Here you will find our projects and works , Note: This section is under development",
+            ]
           : Location.pathname === "/Blogs"
-          ? ["we publish our latest topics in several scopes, including helping to find technical solutions , web development and design , software solutions...etc"]
+          ? [
+              "we publish our latest topics in several scopes, including helping to find technical solutions , web development and design , software solutions...etc",
+            ]
           : Location.pathname === "/Blogs/post"
           ? [`${blog.text}`]
           : Location.pathname === "/Contact"
-          ? ["Welcome to the contact page, we are here to provide any assistance or any solutions"]
+          ? [
+              "Welcome to the contact page, we are here to provide any assistance or any solutions",
+            ]
           : "", // Strings to display
 
       // Speed settings, try diffrent values untill you get good results
@@ -251,10 +256,15 @@ const Navbar = (props) => {
             </Link>
           </li>
         </ul>
-        <Link className="border-[1px] p-1 rounded-md hidden md:block before:!hidden after:!hidden" to="/Contact">Contact Me</Link>
+        <Link
+          className="border-[1px] px-2 rounded-sm hidden md:block before:!hidden after:!hidden hover:!bg-orange-400 transition hover:!shadow-none"
+          to="/Contact"
+        >
+          Contact Me
+        </Link>
       </FlexRow>
-      <About className="About">
-        <h2 className="text-white text-2xl lg:text-4xl " color="white">
+      <About className="prose-sm md:prose-md lg:prose-xl">
+        <h2 className="text-white" color="white">
           {Location.pathname === "/"
             ? "About Me"
             : Location.pathname === "/Services"

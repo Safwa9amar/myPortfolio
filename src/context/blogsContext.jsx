@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import arr from "../components/images";
+import arr from "../components/img/projectImages";
 export const BlogContext = createContext();
 
 
