@@ -100,6 +100,12 @@ const BoardContainer = function (props) {
 };
 const Projects = () => {
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ delay: 1 / 3 }}
+    viewport={{ once: true }}
+  >
     <div className="md:m-24 flex flex-col ">
       <Tabs />
       <BoardContainer>
@@ -118,6 +124,7 @@ const Projects = () => {
         <button className="bg-white px-2 mx-2 rounded-md">load more</button>
       </BoardContainer>
     </div>
+    </motion.div>
   );
 };
 

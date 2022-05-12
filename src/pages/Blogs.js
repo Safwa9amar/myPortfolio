@@ -78,7 +78,12 @@ function Tag(props) {
 export default function Blogs() {
   const Blogs = useContext(BlogContext);
   return (
-    <>
+    <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ delay: 1 / 3 }}
+    viewport={{ once: true }}
+  >
       <div className="w-full h-full flex justify-center border-2">
         <div className="w-5/6 mt-10 md:px-24 ">
           <Search />
@@ -102,6 +107,6 @@ export default function Blogs() {
         </div>
       </div>
       <Outlet />
-    </>
+    </motion.div>
   );
 }

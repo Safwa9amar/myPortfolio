@@ -52,7 +52,6 @@ const TextBig = styled.p`
   color: #391400;
 `;
 const Text = styled.p`
-  font-family: Epilogue;
   font-weight: normal;
   font-size: 1rem;
   line-height: 32px;

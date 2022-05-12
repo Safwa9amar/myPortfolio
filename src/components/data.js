@@ -9,6 +9,7 @@ let mydata = {
     Email: "hassanih97@gmail.com",
     Address: "sidi bel abbes , ait elarbi ben mhidi",
     FreeLance: "available",
+    profile:'src/components/profile.png'
   },
   Education: [
     {

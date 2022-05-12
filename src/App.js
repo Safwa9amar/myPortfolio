@@ -9,7 +9,7 @@ import Navbar from "./components/nav";
 import Footer from "./components/Footer";
 import Blog from "./pages/blogs/Blog";
 import BlogsContextProvider from "./context/blogsContext";
-
+import Test from "./pages/test";
 function App() {
   return (
     <div className="App">
@@ -17,7 +17,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="Blogs" element={<Blogs />} />
+          <Route path="test" element={<Test />} />
+
+          <Route path="Blogs" element={<Blogs />}></Route>
           <Route path="Blogs/post" element={<Blog />} />
           <Route path="Contact" element={<ContactPage />} />
           <Route path="Services" element={<Services />} />

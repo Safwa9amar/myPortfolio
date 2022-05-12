@@ -174,7 +174,7 @@ const Navbar = (props) => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings:
-        Location.pathname === "/"
+             Location.pathname === "/"
           ? ["Front End Developer", "Web designer", "5 Years Experience"]
           : Location.pathname === "/Services"
           ? [
@@ -190,6 +190,8 @@ const Navbar = (props) => {
             ]
           : Location.pathname === "/Blogs/post"
           ? [`${blog.text}`]
+          : Location.pathname === "/test"
+          ? ['test']
           : Location.pathname === "/Contact"
           ? [
               "Welcome to the contact page, we are here to provide any assistance or any solutions",
@@ -279,9 +281,14 @@ const Navbar = (props) => {
             ? "html"
             : Location.pathname === "/Contact"
             ? "Contact"
+            : Location.pathname === "/test"
+            ? "test"
             : ""}
         </h2>
-        <Text color="white" ref={el}></Text>
+        <div className="flex justify-center items-baseline gap-1 text-white">
+        <Text color="white" ref={el}/>
+
+        </div>
       </About>
       <MenuBtn
         onClick={(e) => {

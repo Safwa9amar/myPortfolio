@@ -72,7 +72,13 @@ const Article = (props) => {
 
 const Services = () => {
   return (
-    <div className="p-0">
+    <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ delay: 1 / 3 }}
+    viewport={{ once: true }}
+  >
+    <div className="p-0 font-sans ">
       {DataServices.map((service) => {
         return (
           <Article
@@ -86,6 +92,7 @@ const Services = () => {
         );
       })}
     </div>
+    </motion.div>
   );
 };
 
