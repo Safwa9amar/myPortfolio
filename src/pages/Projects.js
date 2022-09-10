@@ -1,14 +1,7 @@
-import img from "../components/img/project/1.jpg";
-import img1 from "../components/img/project/2.jpg";
-import img2 from "../components/img/project/3.jpg";
-import img3 from "../components/img/project/4.jpg";
-import img4 from "../components/img/project/5.jpg";
-import img5 from "../components/img/project/6.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState , useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProjectsContext } from "../context/ProjectContext";
-
 
 const Tabs = function ({Projects,setPortfolioData }) {
 
