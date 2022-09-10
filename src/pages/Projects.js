@@ -10,45 +10,6 @@ import { Link } from "react-router-dom";
 import { ProjectsContext } from "../context/ProjectContext";
 
 
-const data = [
-  {
-    id: 1,
-    img: img,
-    header: "KeyBoard",
-    tag: "App dev",
-    description: "using this web allo to generate random data from api",
-  },
-  {
-    id: 2,
-    img: img1,
-    header: "Sofa",
-    tag: "App designs",
-  },
-  {
-    id: 3,
-    img: img2,
-    header: "Work Media",
-    tag: "Web dev",
-  },
-  {
-    id: 4,
-    img: img3,
-    header: "Handp",
-    tag: "Web designs",
-  },
-  {
-    id: 5,
-    img: img4,
-    header: "Handp",
-    tag: "App designs",
-  },
-  {
-    id: 6,
-    img: img5,
-    header: "Handp",
-    tag: "Branding",
-  },
-];
 const Tabs = function ({Projects,setPortfolioData }) {
 
   const handleChange = (e) => {
