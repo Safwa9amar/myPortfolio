@@ -1,47 +1,47 @@
 import React, { createContext, useState } from "react";
 import arr from "../components/img/projectImages";
-export const BlogContext = createContext();
+export const ProjectsContext = createContext();
 
-
-const BlogsContextProvider = (props) => {
-  const [blogs] = useState([
+const ProjectsContextProvider = (props) => {
+  const [Projects] = useState([
     {
-      id : 1,
-      header: "How To Use CSS Layers",
+      id: 1,
+      header: "Astro Layers",
       date: "18 avril 2022",
-      tag: "css",
-      text: "CSS layers change how the cascade works and it makes writing clean CSS code so much easier.",
+      tag: "designs",
+      text: "adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget ",
       img: arr[3],
-      notion_id : "397e6c8fda9c45e3b722650a6b5023a9"
     },
     {
-      id : 2,
-      header: "How To Create Custom JavaScript Events",
+      id: 2,
+      header: "Custom Js Events",
       date: "14 avril 2022",
-      tag: "JavaScript",
+      tag: "designs",
       text: "Custom events in JavaScript make handling things like double click, long press, and touch gestures much easier, but they can also be used for cross app communication.",
       img: arr[4],
     },
     {
-      id : 3,
-      header: 'Stop Using The "!" Bang Operator In JavaScript',
+      id: 3,
+      header: 'The "!" In js',
       date: "4avril 2022",
-      tag: "JavaScript",
+      tag: "Web",
       text: "You may think you are writing cleaner code using the bang operator, but in reality you are just opening yourself up to a plethora of bugs.",
       img: arr[5],
     },
     {
-      id : 4,
-      header: "How To Implement Debounce And Throttle In JavaScript ",
+      id: 4,
+      header: "Debounce ",
       date: "22 mars 2022",
-      tag: "JavaScript",
+      tag: "App",
       text: "Debounce and throttle are two of the best ways to improve the performance of your site and in this article I talk all about how to implement both options and what they do.",
       img: arr[2],
     },
   ]);
 
   return (
-    <BlogContext.Provider value={blogs}>{props.children}</BlogContext.Provider>
+    <ProjectsContext.Provider value={Projects}>
+      {props.children}
+    </ProjectsContext.Provider>
   );
 };
-export default BlogsContextProvider;
+export default ProjectsContextProvider;

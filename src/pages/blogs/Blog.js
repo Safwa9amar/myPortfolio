@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { BlogContext } from "../../context/blogsContext";
 import { motion } from "framer-motion";
+import Notion from "../../context/Notion";
+
 export default function Blog() {
   let location = Math.floor(useLocation().search.replace("?id=", ""));
   const blog = useContext(BlogContext).filter(
@@ -10,7 +12,7 @@ export default function Blog() {
 
   return (
     <div className="w-full h-full flex justify-center border-2">
-      <div className="w-5/6 mt-10 md:px-24 ">
+      <div className="w-5/6 md:px-24 ">
         <motion.div
           className="m-3 flex-col gap-4 justify-between p-2 xl:text-1xl md:text-xl sm:text-sm xs:text-xs "
           initial={{ opacity: 0 }}
@@ -18,10 +20,7 @@ export default function Blog() {
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <h1>{blog?.header || "Oops ! No post"}</h1>
-          <h1>{blog?.date}</h1>
-          <h1>{blog?.text}</h1>
-          <img src={blog?.img} alt={blog?.header} />
+          <Notion page_id={blog.notion_id} />
         </motion.div>
       </div>
     </div>

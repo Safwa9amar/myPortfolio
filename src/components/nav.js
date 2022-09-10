@@ -9,6 +9,8 @@ import { AiOutlineHome, AiFillProject, AiFillContacts } from "react-icons/ai";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { ImBlog } from "react-icons/im";
 import { BlogContext } from "../context/blogsContext";
+import { ProjectsContext } from "../context/ProjectContext";
+
 
 const Nav = styled.div`
   display: flex;
@@ -170,6 +172,10 @@ const Navbar = (props) => {
   const blog = useContext(BlogContext).filter(
     (blog) => blog.id === Math.floor(Location.search.replace("?id=", ""))
   )[0];
+  const Project = useContext(ProjectsContext).filter(
+    (Project) => Project.id === Math.floor(Location.search.replace("?id=", ""))
+  )[0];
+
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -180,7 +186,7 @@ const Navbar = (props) => {
           ? [
               "We provides a full service range including technical skills, design, web development.",
             ]
-          : Location.pathname === "/Projects"
+          : Location.pathname === "/Portfolio"
           ? [
               "Here you will find our projects and works , Note: This section is under development",
             ]
@@ -196,6 +202,9 @@ const Navbar = (props) => {
           ? [
               "Welcome to the contact page, we are here to provide any assistance or any solutions",
             ]
+          : Location.pathname === "/Portfolio/Project"
+          ? [`${Project.text.slice(0,50)}...Read more`]
+          
           : "", // Strings to display
 
       // Speed settings, try diffrent values untill you get good results
@@ -221,6 +230,16 @@ const Navbar = (props) => {
               Home
             </Link>
           </li>
+         
+          <li>
+            <AiFillProject />
+            <Link
+              className={Location.pathname === "/Portfolio" ? "active" : ""}
+              to="/Portfolio"
+            >
+              Portfolio
+            </Link>
+          </li>
           <li>
             <MdOutlineDesignServices />
             <Link
@@ -228,15 +247,6 @@ const Navbar = (props) => {
               to="/Services"
             >
               Services
-            </Link>
-          </li>
-          <li>
-            <AiFillProject />
-            <Link
-              className={Location.pathname === "/Projects" ? "active" : ""}
-              to="/Projects"
-            >
-              Projects
             </Link>
           </li>
           <li>
@@ -266,13 +276,15 @@ const Navbar = (props) => {
         </Link>
       </FlexRow>
       <About className="prose-sm md:prose-md lg:prose-xl">
-        <h2 className="text-white" color="white">
+        <h3 className="text-white" color="white">
           {Location.pathname === "/"
             ? "About Me"
             : Location.pathname === "/Services"
             ? "Services"
-            : Location.pathname === "/Projects"
-            ? "Projects"
+            : Location.pathname === "/Portfolio"
+            ? "Portfolio"
+            : Location.pathname === "/Portfolio/Project"
+            ? blog.header
             : Location.pathname === "/Blogs"
             ? "Blogs"
             : Location.pathname === "/Blogs/post"
@@ -284,7 +296,7 @@ const Navbar = (props) => {
             : Location.pathname === "/test"
             ? "test"
             : ""}
-        </h2>
+        </h3>
         <div className="flex justify-center items-baseline gap-1 text-white">
         <Text color="white" ref={el}/>
 
