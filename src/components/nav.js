@@ -11,13 +11,15 @@ import { ImBlog } from "react-icons/im";
 import { BlogContext } from "../context/blogsContext";
 import { ProjectsContext } from "../context/ProjectContext";
 
-
 const Nav = styled.div`
   display: flex;
   flex-flow: column;
   width: 100%;
   &.Nav {
     background-color: #28293e;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url(${(props) => props.bg});
     height: 45vh;
     position: relative;
   }
@@ -167,7 +169,7 @@ const MenuBtn = styled.div`
 const Navbar = (props) => {
   const [active, setActive] = useState(false);
   const Location = useLocation();
-
+  // const [state, setstate] = useState();
   const el = useRef(null);
   const blog = useContext(BlogContext).filter(
     (blog) => blog.id === Math.floor(Location.search.replace("?id=", ""))
@@ -176,11 +178,10 @@ const Navbar = (props) => {
     (Project) => Project.id === Math.floor(Location.search.replace("?id=", ""))
   )[0];
 
-
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings:
-             Location.pathname === "/"
+        Location.pathname === "/"
           ? ["Front End Developer", "Web designer", "5 Years Experience"]
           : Location.pathname === "/Services"
           ? [
@@ -195,16 +196,15 @@ const Navbar = (props) => {
               "we publish our latest topics in several scopes, including helping to find technical solutions , web development and design , software solutions...etc",
             ]
           : Location.pathname === "/Blogs/post"
-          ? [`${blog.text}`]
+          ? [`${blog?.date_posted}`]
           : Location.pathname === "/test"
-          ? ['test']
+          ? ["test"]
           : Location.pathname === "/Contact"
           ? [
               "Welcome to the contact page, we are here to provide any assistance or any solutions",
             ]
           : Location.pathname === "/Portfolio/Project"
-          ? [`${Project.text.slice(0,50)}...Read more`]
-          
+          ? [`${Project.text.slice(0, 50)}...Read more`]
           : "", // Strings to display
 
       // Speed settings, try diffrent values untill you get good results
@@ -219,8 +219,22 @@ const Navbar = (props) => {
       typed.destroy();
     };
   });
+  const BlogTag = () => {
+    return (
+      <div className="md:flex items-center justify-center gap-1">
+        {/* <p className="bg-white text-black rounded-md px-2 text-xl font-bold"> */}
+          {/* {blog?.tag} */}
+        {/* </p> */}
+        <p style={{ fontFamily: "Rubik Moonrocks" }}>{blog?.header}</p>
+      </div>
+    );
+  };
   return (
-    <Nav className="Nav" active={active}>
+    <Nav
+      className="Nav"
+      active={active}
+      bg={Location.pathname === "/Blogs/post" ? blog?.img_url : ""}
+    >
       <FlexRow className="nav_list">
         <Logo className="logo">H.Safwan</Logo>
         <ul>
@@ -230,7 +244,7 @@ const Navbar = (props) => {
               Home
             </Link>
           </li>
-         
+
           <li>
             <AiFillProject />
             <Link
@@ -276,30 +290,35 @@ const Navbar = (props) => {
         </Link>
       </FlexRow>
       <About className="prose-sm md:prose-md lg:prose-xl">
-        <h3 className="text-white" color="white">
-          {Location.pathname === "/"
-            ? "About Me"
-            : Location.pathname === "/Services"
-            ? "Services"
-            : Location.pathname === "/Portfolio"
-            ? "Portfolio"
-            : Location.pathname === "/Portfolio/Project"
-            ? blog.header
-            : Location.pathname === "/Blogs"
-            ? "Blogs"
-            : Location.pathname === "/Blogs/post"
-            ? blog.header
-            : Location.pathname === "/Blogs/html"
-            ? "html"
-            : Location.pathname === "/Contact"
-            ? "Contact"
-            : Location.pathname === "/test"
-            ? "test"
-            : ""}
+        <h3
+          className="text-white"
+          color="white"
+          style={{ fontFamily: "Rubik Moonrocks" }}
+        >
+          {Location.pathname === "/" ? (
+            "About Me"
+          ) : Location.pathname === "/Services" ? (
+            "Services"
+          ) : Location.pathname === "/Portfolio" ? (
+            "Portfolio"
+          ) : Location.pathname === "/Portfolio/Project" ? (
+            Project.header
+          ) : Location.pathname === "/Blogs" ? (
+            "Blogs"
+          ) : Location.pathname === "/Blogs/post" ? (
+            <BlogTag />
+          ) : Location.pathname === "/Blogs/html" ? (
+            "html"
+          ) : Location.pathname === "/Contact" ? (
+            "Contact"
+          ) : Location.pathname === "/test" ? (
+            "test"
+          ) : (
+            ""
+          )}
         </h3>
         <div className="flex justify-center items-baseline gap-1 text-white">
-        <Text color="white" ref={el}/>
-
+          <Text color="white" ref={el} />
         </div>
       </About>
       <MenuBtn

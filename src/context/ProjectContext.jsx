@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import arr from "../components/img/projectImages";
 export const ProjectsContext = createContext();
 
+
 const ProjectsContextProvider = (props) => {
   const [Projects] = useState([
     {
@@ -9,6 +10,7 @@ const ProjectsContextProvider = (props) => {
       header: "Astro Layers",
       date: "18 avril 2022",
       tag: "designs",
+      notion_id: "397e6c8fda9c45e3b722650a6b5023a9",
       text: "adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget ",
       img: arr[3],
     },
@@ -44,4 +46,5 @@ const ProjectsContextProvider = (props) => {
     </ProjectsContext.Provider>
   );
 };
+
 export default ProjectsContextProvider;

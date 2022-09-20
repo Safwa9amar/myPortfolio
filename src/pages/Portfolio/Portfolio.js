@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "./styles.css";
+import Notion from "../../components/Notion";
 
 export default function Portfolio() {
   let location = Math.floor(useLocation().search.replace("?id=", ""));
@@ -38,6 +39,8 @@ export default function Portfolio() {
               </div>
             </Carousel>
           </motion.div>
+
+          <Notion page_id={Projects.notion_id} />
         </div>
       </div>
     </>

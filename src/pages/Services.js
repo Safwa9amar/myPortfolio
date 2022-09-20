@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 let DataServices = [
   {
-    id: 1,
+    id: 2,
     img: arr[0],
     header: "Website Design",
     body: `
@@ -23,7 +23,7 @@ let DataServices = [
     `,
   },
   {
-    id: 1,
+    id: 3,
     img: arr[2],
     header: "UI UX design",
     body: `

@@ -16,22 +16,21 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 function App() {
   return (
     <div className="App">
-
       <ProjectsContextProvider>
-      <BlogsContextProvider>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="test" element={<Test />} />
-          <Route path="Blogs" element={<Blogs />}></Route>
-          <Route path="Blogs/post" element={<Blog />} />
-          <Route path="Contact" element={<ContactPage />} />
-          <Route path="Services" element={<Services />} />
-          <Route path="Portfolio" element={<Projects />}/>
-          <Route path="Portfolio/Project" element={<Portfolio/>}/>
-        </Routes>
-        <Footer />
-      </BlogsContextProvider>
+        <BlogsContextProvider>
+            <Navbar />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="test" element={<Test />} />
+              <Route path="Blogs" element={<Blogs />}></Route>
+              <Route path="Blogs/post" element={<Blog />} />
+              <Route path="Contact" element={<ContactPage />} />
+              <Route path="Services" element={<Services />} />
+              <Route path="Portfolio" element={<Projects />} />
+              <Route path="Portfolio/Project" element={<Portfolio />} />
+            </Routes>
+            <Footer />
+        </BlogsContextProvider>
       </ProjectsContextProvider>
     </div>
   );

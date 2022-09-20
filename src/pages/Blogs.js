@@ -79,11 +79,11 @@ export default function Blogs() {
   const Blogs = useContext(BlogContext);
   return (
     <motion.div
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ delay: 1 / 3 }}
-    viewport={{ once: true }}
-  >
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 1 / 3 }}
+      viewport={{ once: true }}
+    >
       <div className="w-full h-full flex justify-center border-2">
         <div className="w-5/6 mt-10 md:px-24 ">
           <Search />
@@ -96,10 +96,10 @@ export default function Blogs() {
           {Blogs.map((articles) => (
             <Article
               header={articles.header}
-              date={articles.date}
+              date={articles.date_posted}
               tag={articles.tag}
-              text={articles.text}
-              img={articles.img}
+              text={`${articles.resume.slice(0, 100)}...`}
+              img={articles.img_url}
               id={articles.id}
               key={articles.id}
             />
